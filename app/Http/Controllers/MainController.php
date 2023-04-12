@@ -12,7 +12,7 @@ class MainController extends Controller
     public function index(){
         $users = User::all();
         $areas = Area::all();
-        return view('home', compact('users','areas'));
+        return view('main', compact('users','areas'));
     }
     //
 }

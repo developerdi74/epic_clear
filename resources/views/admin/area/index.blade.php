@@ -32,10 +32,32 @@
                     <td>
                         <input type="text" class="form-control" name = 'discont' placeholder="Скидка в процентах" value="{{$area->discont}}">
                     </td>
-                    <td><button type="submit" class="btn btn-primary">OK</button></td>
+                        <td><button type="submit" class="btn btn-primary">OK</button></td>
                     </form>
+                    <td><form action="{{route('admin.area.delete', $area->id)}}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button  type="submit" class="btn btn-danger">Del</button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
+                <tr class="odd">
+                    <form action="{{route('admin.area.store')}}" method="post">
+                        @csrf
+                        <td class="dtr-control sorting_1" tabindex="0">{{$area->id + 1}}</td>
+                        <td>
+                            <input type="text" class="form-control" name = 'name' placeholder="Enter ..." value="{{ old('name') }}">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" name = 'price' placeholder="Enter ..." value="{{old('price')}}">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" name = 'discont' placeholder="Скидка в процентах" value="{{old('discont')}}">
+                        </td>
+                        <td><button type="submit" class="btn btn-primary">Add</button></td>
+                    </form>
+                </tr>
                 </tbody>
                 <tfoot>
                 <tr>

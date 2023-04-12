@@ -5,13 +5,24 @@
 @section('header')
 Заявки
 @endsection
+@php
+    $sum = 0
+@endphp
 @section('content')
         @foreach($leads as $lead)
+            @foreach($areas as $area)
+                @foreach( $lead->area as $areaActiv)
+                    @if($area->id == $areaActiv->id)
+                        @php
+                            $sum = $area->price+$sum
+                        @endphp
+                    @endif
+                @endforeach
+            @endforeach
             <div class="col-md-6">
                 <div class="card {{ ($lead->process == 'new') ? 'card-warning' :
                         (($lead->process == 'delete') ? 'card-danger' :
                             (($lead->process == 'update') ? 'card-info'  :'card-success')) }} border border-dark">
-
                     <div class="card-header">
                         <h3 class="card-title">Заявка № - {{ $lead->id }}</h3>
                     </div>
@@ -21,6 +32,12 @@
                             @method('patch')
                             <div class="card-body">
                             <div class="row">
+
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <span>Цена заявки - </span>{{$sum}}
+                                    </div>
+                                </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label>Отметка</label>
@@ -60,7 +77,7 @@
                                                         {{($area->id == $areaActiv->id) ? 'checked':''}}
                                                         @endforeach
                                                         type="checkbox" id="customCheckbox_{{ $area->id }}_{{ $lead->id }}" name="area_id[]" value="{{$area->id}}">
-                                                    <label for="customCheckbox_{{$area->id}}_{{ $lead->id }}" class="custom-control-label">{{ $area->name }}</label>
+                                                    <label for="customCheckbox_{{$area->id}}_{{ $lead->id }}" class="custom-control-label">{{ $area->name }} - {{ $area->price }} руб.</label>
                                                 </div>
                                         @endforeach
                                     </div>

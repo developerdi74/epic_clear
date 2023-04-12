@@ -8,6 +8,7 @@ use App\Http\Controllers\Lead;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\InfoController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,27 +23,22 @@ use App\Http\Controllers\InfoController;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-
 Route::get('/', [MainController::class, 'index'])->name('home.index');
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/auth', [HomeController::class, 'index'])->name('login.index');
+
 
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin'], function(){
-
-
     Route::group(['namespace' => 'Lead'], function(){
-
         Route::get('/', IndexController::class)->name('admin.lead.index');
         Route::patch('/lead/{lead}', UpdateController::class)->name('admin.lead.update');
-
     });
-
     Route::group(['namespace' => 'Area'], function(){
-
         Route::get('/area', IndexController::class)->name('admin.area.index');
         Route::patch('/area/{area}', UpdateController::class)->name('admin.area.update');
-
+        Route::post('/area/', StoreController::class)->name('admin.area.store');
+        Route::delete('/area/{area}', DestroyController::class)->name('admin.area.delete');
     });
 });
 
@@ -57,10 +53,23 @@ Route::group(['namespace' => 'App\Http\Controllers\Lead'], function(){
 });
 
 
-//Route::get('/leads/update', [LeadController::class, 'update']);
-//Route::get('/leads/delete', [LeadController::class, 'delete']);
-
-
+//Простые страницы
 Route::get('/about', [AboutController::class, 'index'])->name('about.index');
 Route::get('/info', [InfoController::class, 'index'])->name('info.index');
 Route::get('/price', [PriceController::class, 'index'])->name('price.index');
+
+
+
+
+//Авторизация
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

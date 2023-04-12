@@ -8,7 +8,6 @@
     <link rel="shortcut icon" href="images/logo2.png" type="image/x-icon">
     <meta name="description" content="New StudioM4 Theme HTML Template - Download Now!">
     <title>@yield('title')| Epic Clean</title>
-    <title>Лазерная эпиляция в Магнитогорске </title>
     <link rel="stylesheet" href="{{asset('public/css/font-awesome.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/mobirise2.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/mobirise-icons.css')}}">
@@ -19,13 +18,11 @@
     <link rel="stylesheet" href="{{asset('public/css/jquery.formstyler.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/jquery.formstyler.theme.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/jquery.datetimepicker.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/css/style_1.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/styles.css')}}">
-    <link rel="stylesheet" href="{{asset('public/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/recaptcha.css')}}">
-    <link rel="stylesheet" href="{{asset('public/css/mystyle.css')}}">
-    <link rel="preload" as="style" href="{{asset('assets/mobirise/public/css/mbr-additional.css')}}">
+    <!---<link rel="preload" as="style" href="asset('assets/mobirise/css/mbr-additional.css')">-->
     <link rel="stylesheet" href="{{asset('public/css/mbr-additional.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('public/css/mystyle.css')}}">
 
 </head>
 <body>
@@ -99,19 +96,19 @@
                             hendrerit tristique.</p>
                     </div>
                     <div class="social-list">
-                        <a href="https://twitter.com/mobirise" target="_blank">
+                        <a href="" target="_blank">
                             <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
                         </a>
-                        <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
+                        <a href="" target="_blank">
                             <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
                         </a>
-                        <a href="https://instagram.com/mobirise" target="_blank">
+                        <a href="" target="_blank">
                             <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
                         </a>
-                        <a href="https://www.youtube.com/c/mobirise" target="_blank">
+                        <a href="" target="_blank">
                             <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
                         </a>
-                        <a href="https://www.behance.net/Mobirise" target="_blank">
+                        <a href="" target="_blank">
 
                         </a>
                     </div>
@@ -186,7 +183,6 @@
 <script src="{{asset('public/js/jquery.touch-swipe.min.js')}}"></script>
 <script src="{{asset('public/js/jquery.formstyler.js')}}"></script>
 <script src="{{asset('public/js/jquery.formstyler.min.js')}}"></script>
-<script src="{{asset('public/js/vimeo_player.js')}}"></script>
 <script src="{{asset('public/js/bootstrap-carousel-swipe.js')}}"></script>
 <script src="{{asset('public/js/mbr-testimonials-slider.js')}}"></script>
 <script src="{{asset('public/js/smooth-scroll.js')}}"></script>
