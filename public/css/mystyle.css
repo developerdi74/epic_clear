@@ -126,3 +126,11 @@ section .left-block{
 body h1{
     margin-left: 20px;
 }
+
+@media(max-width: 1000px){
+
+section .left-block{
+    padding:40px;
+}
+
+}

@@ -18,7 +18,7 @@
     <section class="header8 cid-black" id="content7-4">
         <div class="container-fluid align-center">
             <div class="row justify-content-md-center">
-                <div class="col-md-9 col-lg-9 m-auto left-block">
+                <div class="col-md-12 col-lg-9 m-auto left-block">
                     <div class="media-content">
                         <h1 class="mbr-section-title align-left mbr-bold mbr-white mbr-fonts-style display-2">Какие способы удаления нежелательных волос существуют?</h1>
 
@@ -50,7 +50,7 @@
     <section class="cid-white header8" id="content7-4">
         <div class="container-fluid align-center">
             <div class="row justify-content-md-center">
-                <div class="col-md-9 col-lg-9 m-auto left-block">
+                <div class="col-md-12 col-lg-9 m-auto left-block">
                     <div class="media-content">
                         <h1 class="mbr-section-title align-left mbr-bold mbr-black mbr-fonts-style display-2">Как работает лазерная эпиляция волос?</h1>
                         <p class="mbr-section-text mbr-black">
@@ -68,7 +68,7 @@
     <section class="header8 cid-black" id="content7-4">
         <div class="container-fluid align-center">
             <div class="row justify-content-md-center">
-                <div class="col-md-9 col-lg-9 m-auto left-block">
+                <div class="col-md-12 col-lg-9 m-auto left-block">
                     <div class="media-content">
                         <h1 class="mbr-section-title align-left mbr-bold mbr-white mbr-fonts-style display-2">Преимущества использования диодного лазера</h1>
 
@@ -86,7 +86,7 @@
     <section class="cid-white header8" id="content7-4">
         <div class="container-fluid align-center">
             <div class="row justify-content-md-center">
-                <div class="col-md-9 col-lg-9 m-auto left-block">
+                <div class="col-md-12 col-lg-9 m-auto left-block">
                     <div class="media-content">
                         <h1 class="mbr-section-title align-left mbr-bold mbr-black mbr-fonts-style display-2">Что стоит знать перед эпиляцией диодным лазером и после неё?</h1>
                         <div class="mbr-section-text mbr-black">
@@ -107,7 +107,7 @@
     <section class="header8 cid-black" id="content7-4">
         <div class="container-fluid align-center">
             <div class="row justify-content-md-center">
-                <div class="col-md-9 col-lg-9 m-auto left-block">
+                <div class="col-md-12 col-lg-9 m-auto left-block">
                     <div class="media-content">
                         <h1 class="mbr-section-title align-left mbr-bold mbr-white mbr-fonts-style display-2">Особенности проведения процедуры</h1>
 
@@ -129,7 +129,7 @@
     <section class="cid-white header8" id="content7-4">
         <div class="container-fluid align-center">
             <div class="row justify-content-md-center">
-                <div class="col-md-9 col-lg-9 m-auto left-block">
+                <div class="col-md-12 col-lg-9 m-auto left-block">
                     <div class="media-content">
                         <h1 class="mbr-section-title align-left mbr-bold mbr-black mbr-fonts-style display-2">Противопоказания</h1>
                         <div class="mbr-section-text mbr-black">
