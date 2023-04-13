@@ -20,16 +20,11 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+//на главную
 Route::get('/', [MainController::class, 'index'])->name('home.index');
 
-Route::get('/auth', [HomeController::class, 'index'])->name('login.index');
 
-
-
-Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin'], function(){
+Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin', 'middleware' => 'admin'], function(){
     Route::group(['namespace' => 'Lead'], function(){
         Route::get('/', IndexController::class)->name('admin.lead.index');
         Route::patch('/lead/{lead}', UpdateController::class)->name('admin.lead.update');
@@ -60,8 +55,6 @@ Route::get('/price', [PriceController::class, 'index'])->name('price.index');
 
 
 
-
 //Авторизация
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
