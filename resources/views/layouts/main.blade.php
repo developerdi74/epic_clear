@@ -64,10 +64,25 @@
                         <a class="nav-link link text-white display-4" href="{{ route('about.index') }}">
                             Контакты</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link link text-white display-4" href="{{ route('admin.lead.index') }}">
-                            Админка</a>
-                    </li>
+                    @if(auth()->user()==null)
+                        <li class="nav-item">
+                            <a class="nav-link link text-white display-4" href="{{ route('home') }}">
+                                Войти</a>
+                        </li>
+                    @elseif(auth()->user()->role=='admin')
+                        <li class="nav-item">
+                            <a class="nav-link link text-white display-4" href="{{ route('home') }}">
+                                Панель</a>
+                        </li>
+                    @endif
+                    @if(auth()->user()!=null)
+                        <li class="nav-item">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="">
+                                @csrf
+                                <input type="submit" class="nav-link link text-white display-4 btn-logout" value="Выйти">
+                            </form>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </div>

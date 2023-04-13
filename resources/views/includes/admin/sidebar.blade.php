@@ -5,7 +5,7 @@
         <li class="nav-item menu-open">
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{ route('admin.lead.index') }}" class="nav-link {{ (Route::currentRouteName()=='admin.lead.index') ? 'active' : '' }}">
+                    <a href="{{ route('home.index') }}" class="nav-link {{ (Route::currentRouteName()=='admin.lead.index') ? 'active' : '' }}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Заявки</p>
                         <span class="badge badge-info right">{{ DB::table('leads')->count() }}</span>
