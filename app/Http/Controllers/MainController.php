@@ -10,6 +10,9 @@ use App\Models\User;
 class MainController extends Controller
 {
     public function index(){
+
+       // $this->authorize('view', auth()->user()); //Полиция для доступа админа - регистрируется в провайдерах
+
         $users = User::all();
         $areas = Area::all();
         return view('main', compact('users','areas'));

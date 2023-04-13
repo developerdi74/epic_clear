@@ -69,12 +69,13 @@
                             <a class="nav-link link text-white display-4" href="{{ route('home') }}">
                                 Войти</a>
                         </li>
-                    @elseif(auth()->user()->role=='admin')
+                    @endif
+                    @can('view', auth()->user())
                         <li class="nav-item">
                             <a class="nav-link link text-white display-4" href="{{ route('home') }}">
                                 Панель</a>
                         </li>
-                    @endif
+                    @endcan
                     @if(auth()->user()!=null)
                         <li class="nav-item">
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="">

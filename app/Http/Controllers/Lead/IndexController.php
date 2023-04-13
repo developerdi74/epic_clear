@@ -14,6 +14,7 @@ class IndexController extends BaseController
 {
     public function __invoke(FilterRequest $request){
 
+
         $data = $request->validated();
         $query = Lead::query();
 

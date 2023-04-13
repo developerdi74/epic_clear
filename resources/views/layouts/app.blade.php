@@ -12,6 +12,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('public/build/assets/app-67dcdfd2.css')}}">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -77,4 +78,5 @@
         </main>
     </div>
 </body>
+<script src="{{asset('public/build/assets/app-dc425b27.js')}}"></script>
 </html>
