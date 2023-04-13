@@ -1,3 +1,23 @@
+@font-face {
+    font-weight: 400; /* Соответствует значению normal */
+    font-family: Roboto;
+    src: url("../fonts/roboto/Roboto-Regular.ttf");
+}
+@font-face {
+    font-weight: 500; /* Соответствует значению normal */
+    font-family: Roboto;
+    src: url("../fonts/roboto/Roboto-Medium.ttf");
+}
+@font-face {
+    font-weight: 700; /* Соответствует значению bold */
+    font-family: Roboto;
+    src: url("../fonts/roboto/Roboto-Bold.ttf");
+}
+@font-face {
+    font-weight: 300;
+    font-family: Roboto;
+    src: url("../fonts/roboto/Roboto-Light.ttf");
+}
 
 
 body {
