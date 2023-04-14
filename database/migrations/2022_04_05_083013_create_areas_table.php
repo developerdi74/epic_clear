@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('price');
-            $table->integer('discont')->nullable();
+            $table->integer('discont')->default(0);
             $table->timestamps();
         });
     }

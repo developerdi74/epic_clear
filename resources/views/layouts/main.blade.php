@@ -130,35 +130,34 @@
                     </div>
                 </div>
             </div>
-
-
             <div class="col-lg-7 col-md-12 mx-auto mbr-form" data-form-type="formoid">
                 <!--Formbuilder Form-->
-                <form action="https://mobirise.com/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="371PdDVHAY+G82Mw6TCokUT7J3NXDXQO4osBEHRbQzeHuzA7V6Ns0vscyysYa/ALH3vUy6irxU+Od6lZceYPFOOeDLVgjCMEI1fEf7ww+80MTIa4PeFvJIo7ywn6QJCg.o5IuWW/g74vUjZxI9t9/x0DNkrO8O1P8XDsBfQmYPFYp8vvp1eV1SuAnFV4HhG8ogf6I7Uyh3NjVIZ7rJ0UrU8PgyCSLTkc4W//h5ew39E8AwrKDXTXiHh0jzjo35FbR">
-                    <div class="form-row">
-                        <div hidden="hidden" data-form-alert class="alert alert-success col-12">Thanks for filling out
-                            the form!</div>
-                        <div hidden="hidden" data-form-alert-danger class="alert alert-danger col-12">Oops...! some
-                            problem!</div>
-                    </div>
+                <form action="{{route('lead.store')}}" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name">
+                    @csrf
+                    @method('post')
+                    @if(request()->get('success')==1)
+                        <div class="form-row">
+                            <div data-form-alert class="alert alert-success col-12">Спасибо! Заявка отправлена, мы перезвоним Вам!</div>
+                        </div>
+                    @endif
                     <div class="dragArea form-row">
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                             <div class="form-row">
                                 <div class="col-lg-6">
-                                    <input type="text" name="yourName" placeholder="Your Name" data-form-field="yourName" class="form-control text-multiple" value id="yourName-contacts1-9">
+                                    <input type="text" name="name" placeholder="Введите имя" data-form-field="yourName" class="form-control text-multiple" value id="yourName-contacts1-9">
                                 </div>
                                 <div class="col-lg-6  email-input">
-                                    <input type="text" name="yourEmail" placeholder="Your Email" data-form-field="yourEmail" class="form-control text-multiple" value id="yourEmail-contacts1-9">
+                                    <input type="text" name="phone" placeholder="Введите телефон" data-form-field="yourEmail" class="form-control text-multiple" value id="yourEmail-contacts1-9">
                                 </div>
                             </div>
                         </div>
-                        <div data-for="subject" class="col-lg-12 col-md-12 col-sm-12 form-group">
-                            <input type="text" name="yourSubject" placeholder="Your Subject" data-form-field="yourSubject" class="form-control display-7" value id="yourSubject-contacts1-9">
-                        </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="message">
-                            <textarea name="yourMessage" placeholder="Your Message" data-form-field="yourMessage" class="form-control display-7" id="yourMessage-contacts1-9"></textarea>
+                            <textarea name="message" placeholder="Ваше сообщение" data-form-field="yourMessage" class="form-control display-7" id="yourMessage-contacts1-9"></textarea>
                         </div>
-                        <div class="form-btn"><button type="submit" class="btn btn-danger display-4" href="https://mobirise.co">Send</button></div>
+                        <div class="col-lg-6  email-input">
+                            <input type="hidden" name="process" placeholder="Введите телефон" data-form-field="yourEmail" class="form-control text-multiple" value="update" id="yourEmail-contacts1-9">
+                        </div>
+                        <div class="form-btn"><button type="submit" class="btn btn-danger display-4">Отправить</button></div>
                     </div>
                 </form>
                 <!--Formbuilder Form-->

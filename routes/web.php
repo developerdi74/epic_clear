@@ -23,7 +23,6 @@ use App\Http\Controllers\HomeController;
 //на главную
 Route::get('/', [MainController::class, 'index'])->name('home.index');
 
-
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin', 'middleware' => 'admin'], function(){
     Route::group(['namespace' => 'Lead'], function(){
         Route::get('/', IndexController::class)->name('admin.lead.index');
