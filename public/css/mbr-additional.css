@@ -1446,8 +1446,8 @@ hr {
   transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 .cid-rR7qHdLpdl {
-  padding-top: 0px;
-  padding-bottom: 120px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: #101010;
 }
 @media (max-width: 992px) {
@@ -1581,7 +1581,7 @@ hr {
 }
 @media (min-width: 992px) {
   .cid-rR7qHdLpdl .video-block {
-    padding-right: 0rem;
+    padding-right: 2rem;
   }
   .cid-rR7qHdLpdl .row {
     padding-right: 0rem;

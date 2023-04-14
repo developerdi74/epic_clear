@@ -5,16 +5,18 @@
 @section('header')
 Заявки
 @endsection
-@php
-    $sum = 0
-@endphp
 @section('content')
         @foreach($leads as $lead)
+            @php
+                $sum = 0;
+				$countArea = $lead->area->count();
+                $discount = ($countArea>4)? 4*0.05 : $countArea*0.05;
+            @endphp
             @foreach($areas as $area)
                 @foreach( $lead->area as $areaActiv)
                     @if($area->id == $areaActiv->id)
                         @php
-                            $sum = $area->price+$sum
+                            $sum = $area->price - $area->discont/100*$area->price+$sum
                         @endphp
                     @endif
                 @endforeach
@@ -35,7 +37,10 @@
 
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <span>Цена заявки - </span>{{$sum}}
+                                        <span>Цена заявки - </span>{{ $sum }}
+                                    </div>
+                                    <div class="form-group">
+                                        <span>С учетом скидки за {{$countArea}} зоны - </span>{{ $sum-$sum*$discount }}
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
@@ -77,7 +82,13 @@
                                                         {{($area->id == $areaActiv->id) ? 'checked':''}}
                                                         @endforeach
                                                         type="checkbox" id="customCheckbox_{{ $area->id }}_{{ $lead->id }}" name="area_id[]" value="{{$area->id}}">
-                                                    <label for="customCheckbox_{{$area->id}}_{{ $lead->id }}" class="custom-control-label">{{ $area->name }} - {{ $area->price }} руб.</label>
+                                                    <label for="customCheckbox_{{$area->id}}_{{ $lead->id }}" class="custom-control-label">
+                                                        @if($area->discont>0)
+                                                            {{ $area->name }} - {{ $area->price - $area->discont/100*$area->price }} руб.(Скидка: {{$area->discont}}%)
+                                                        @else
+                                                            {{ $area->name }} - {{ $area->price }} руб.
+                                                        @endif
+                                                    </label>
                                                 </div>
                                         @endforeach
                                     </div>

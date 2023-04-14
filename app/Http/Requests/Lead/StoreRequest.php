@@ -26,6 +26,7 @@ class StoreRequest extends FormRequest
             'phone' => 'required|string',
             'time' => '',
             'message' => '',
+            'process' => '',
             'area_id' => '',
             //
         ];

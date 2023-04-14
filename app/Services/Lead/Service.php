@@ -6,6 +6,9 @@ namespace App\Services\Lead;
 use App\Models\Lead;
 class Service{
 
+    public function index($data){
+
+    }
 
     public function store($data){
 
