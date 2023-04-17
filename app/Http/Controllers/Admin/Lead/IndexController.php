@@ -17,8 +17,11 @@ class IndexController extends Controller
         $query = Lead::query();
         if(isset($data['process'])){
             $query->where('process','like', "%{$data['process']}%");
+            $leads = $query->orderBy('time', 'asc')->get();
+
+        }else{
+            $leads = $query->orderBy('id', 'desc')->get();
         }
-        $leads = $query->orderBy('id', 'desc')->get();
 
         /*$leads = Lead::orderBy('id', 'desc')->paginate(2);*/
         $areas = Area::all();

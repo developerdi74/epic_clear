@@ -50,6 +50,7 @@
                                             <option {{ ($lead->process=='success') ? 'selected':'' }} value="success">Принята</option>
                                             <option {{ ($lead->process=='delete') ? 'selected':'' }} value="delete">Отказ</option>
                                             <option {{ ($lead->process=='update') ? 'selected':'' }} value="update">Думает</option>
+                                            <option {{ ($lead->process=='complite') ? 'selected':'' }} value="complite">Выполнено</option>
                                             <option {{ ($lead->process=='new') ? 'selected':'' }} value="new">Новая заявка</option>
                                         </select>
                                     </div>
@@ -102,12 +103,23 @@
                                         <textarea class="form-control" name='message' rows="3" placeholder="Enter ...">{{ $lead->message }}</textarea>
                                     </div>
                                 </div>
+                                <div class="col-sm-12 form-group">
+                                    <label>Итоговая стоимость</label>
+                                    <input type="text" class="form-control" placeholder="Итоговая стоимость" name="summa" value="{{ $sum-$sum*$discount }}">
+                                </div>
                             </div>
                             </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Изменить</button>
+                            <div class="card-footer text-left">
+                                    <button type="submit" class="btn btn-primary w-100">Изменить</button>
                             </div>
                         </form>
+                        <div class="card-footer text-right">
+                            <form action="{{route('admin.lead.delete', $lead->id)}}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button  type="submit" class="btn btn-danger w-25" id="delete_btn">Удалить</button>
+                            </form>
+                        </div>
                 </div>
             </div>
         @endforeach

@@ -32,12 +32,12 @@
                     <td>
                         <input type="text" class="form-control" name = 'discont' placeholder="Скидка в процентах" value="{{$area->discont}}">
                     </td>
-                        <td><button type="submit" class="btn btn-primary">OK</button></td>
+                        <td><button type="submit" class="btn btn-primary">OK</button>
                     </form>
-                    <td><form action="{{route('admin.area.delete', $area->id)}}" method="post">
+                        <form style="display: inline;" action="{{route('admin.area.delete', $area->id)}}" method="post">
                             @csrf
                             @method('delete')
-                            <button  type="submit" class="btn btn-danger">Del</button>
+                            <button  type="submit" class="btn btn-danger" id="delete_btn">Del</button>
                         </form>
                     </td>
                 </tr>
@@ -55,7 +55,7 @@
                         <td>
                             <input type="text" class="form-control" name = 'discont' placeholder="Скидка в процентах" value="{{old('discont')}}">
                         </td>
-                        <td><button type="submit" class="btn btn-primary">Add</button></td>
+                        <td><button type="submit" class="btn btn-primary">OK</button></td>
                     </form>
                 </tr>
                 </tbody>

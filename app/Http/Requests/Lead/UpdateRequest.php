@@ -23,11 +23,12 @@ class UpdateRequest extends FormRequest
     {
         return [
             'name' => 'string',
-            'phone' => 'string',
+            'phone' => 'numeric',
             'time' => '',
             'message' => '',
             'area_id' => '',
             'process' =>'',
+            'summa'=>'',
             //
         ];
     }

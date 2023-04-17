@@ -9,6 +9,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\Settings\SeoController;
+use App\Http\Controllers\Admin\Stat\StatController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +29,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin', '
     Route::group(['namespace' => 'Lead'], function(){
         Route::get('/', IndexController::class)->name('admin.lead.index');
         Route::patch('/lead/{lead}', UpdateController::class)->name('admin.lead.update');
+        Route::delete('/lead/{lead}', DestroyController::class)->name('admin.lead.delete');
     });
     Route::group(['namespace' => 'Area'], function(){
         Route::get('/area', IndexController::class)->name('admin.area.index');
@@ -36,7 +39,25 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin', '
     });
 
     Route::group(['namespace' => 'Settings'], function(){
-        Route::get('/seo', IndexController::class)->name('admin.seo.index');
+        Route::get('/seo', [SeoController::class, 'index'])->name('admin.seo.index');
+        Route::post('/seo', [SeoController::class, 'store'])->name('admin.seo.store');
+        Route::patch('/seo/{seo}', [SeoController::class, 'update'])->name('admin.seo.update');
+        Route::delete('/seo/{seo}', [SeoController::class, 'delete'])->name('admin.seo.delete');
+    });
+
+    Route::group(['namespace' => 'Stat'], function(){
+        Route::get('/stat', [StatController::class, 'index'])->name('admin.statistics.index');
+        Route::post('/stat', [StatController::class, 'store'])->name('admin.statistics.store');
+        Route::patch('/stat/{stat}', [StatController::class, 'update'])->name('admin.statistics.update');
+        Route::delete('/stat/{stat}', [StatController::class, 'delete'])->name('admin.statistics.delete');
+    });
+
+    Route::group(['namespace' => 'User'], function(){
+        Route::get('/user', IndexController::class)->name('admin.user.index');
+        Route::get('/user/{user}', [ShowController::class, 'show'])->name('admin.user.show');
+        Route::post('/user', [StoreController::class, 'store'])->name('admin.user.store');
+        Route::patch('/user/{user}', [EditController::class, 'update'])->name('admin.user.update');
+        Route::delete('/user/{user}', [DestroyController::class, 'delete'])->name('admin.user.delete');
     });
 });
 
