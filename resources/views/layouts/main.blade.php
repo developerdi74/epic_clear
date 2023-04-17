@@ -1,3 +1,6 @@
+@php
+   $seo = \App\Http\Controllers\SeoController::getSeo(request()->path());
+@endphp
 <!DOCTYPE html><html>
 <head>
     <!-- Site made with Mobirise Website Builder v4.11.7, https://mobirise.com -->
@@ -5,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="Mobirise v4.11.7, mobirise.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <link rel="shortcut icon" href="images/logo2.png" type="image/x-icon">
-    <meta name="description" content="New StudioM4 Theme HTML Template - Download Now!">
-    <title>@yield('title')| Epic Clean</title>
+    <title>{{ $seo->title }} | Epic Clean</title>
+    <meta name="description" content="{{ $seo->description }}">
+    <meta name="keywords" content="{{ $seo->keywords }}">
     <link rel="stylesheet" href="{{asset('public/css/font-awesome.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/mobirise2.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/mobirise-icons.css')}}">

@@ -34,6 +34,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin', '
         Route::post('/area/', StoreController::class)->name('admin.area.store');
         Route::delete('/area/{area}', DestroyController::class)->name('admin.area.delete');
     });
+
+    Route::group(['namespace' => 'Settings'], function(){
+        Route::get('/seo', IndexController::class)->name('admin.seo.index');
+    });
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Lead'], function(){
