@@ -20,10 +20,9 @@
                 </li>
             </ul>
         </li>
-        {{ $leads->where('process','new')->count() }}
         <li class="nav-header">Фильтр заявок</li>
         <li class="nav-item">
-            <a href="{{ route('admin.lead.index','process=new') }}" class="nav-link {{ (request()->input('process')=='new') ? 'active' : '' }}">
+            <a href="{{ route('admin.lead.index','process=new') }}" class="nav-link" {{ (request()->input('process')=='new') ? 'active' : '' }}">
                 <i class="nav-icon far fa-circle text-warning"></i>
                 <p>Новые</p>
                 <span class="badge badge-info right">{{ DB::table('leads')->where('process', 'like','new')->count() }}</span>
@@ -49,6 +48,17 @@
                 <p class="text">Удаленные</p>
                 <span class="badge badge-info right">{{ DB::table('leads')->where('process', 'like','delete')->count() }}</span>
             </a>
+        </li>
+        <li class="nav-header">Настройки сайта</li>
+        <li class="nav-item menu-open">
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('admin.seo.index') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>SEO настройки страниц</p>
+                    </a>
+                </li>
+            </ul>
         </li>
     </ul>
 </nav>

@@ -6,6 +6,7 @@ use App\Models\Area;
 use App\Models\Lead;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Http\Controllers\TestController;
 
 class MainController extends Controller
 {
