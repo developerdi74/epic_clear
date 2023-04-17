@@ -11,7 +11,7 @@
         <div class="mbr-overlay"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-lg-7 m-auto">
+                <div class="col-md-12 col-lg-5 m-auto">
                     <div class="title">
                         <h2 class="mbr-section-title mbr-regular align-left mbr-fonts-style mbr-white display-2">Новый способ получить идеально гладкую кожу надолго</h2>
                         <p class="mbr-section-subtitle align-left mbr-fonts-style mbr-white block-left display-7">Мы используем диодный лазер. Это последнее поколение оборудования для лазерной эпиляции, которое помогает убрать волосы на теле на 2−5 лет без дискомфорта и рисков для здоровья.
@@ -21,7 +21,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-5 my-auto pb-4 mbr-form" data-form-type="formoid">
+                <div class="col-lg-7 col-md-12 my-auto pb-4 mbr-form" data-form-type="formoid">
                     <form action="{{route('lead.store')}}" method="post" class="mbr-form form-with-styler" data-form-title="Form Name">
                         @csrf
                         @method('post')
@@ -51,9 +51,9 @@
                             </div>
                             <div class="row">
                                 @foreach($areas as $area)
-                                    <div class="col-lg-4 form-group">
+                                    <div class="col-lg-6 form-group">
                                         <input type="checkbox" class="custom-checkbox" id="area_id_{{ $area->id }}" name='area_id[]' value="{{$area->id}}">
-                                        <label for="area_id_{{ $area->id }}">{{$area->name}}</label>
+                                        <label for="area_id_{{ $area->id }}">{{$area->name}}({{$area->price}}&#8381;)</label>
                                     </div>
                                 @endforeach
                             </div>
@@ -144,13 +144,15 @@
             <div class="row justify-content-md-center">
                 <div class="col-md-12 col-lg-6 m-auto left-block">
                     <div class="media-content">
-                        <h1 class="mbr-section-title align-left mbr-bold mbr-white mbr-fonts-style display-2">Немного о себе</h1>
+                        <h1 class="mbr-section-title align-left mbr-bold mbr-white mbr-fonts-style display-2">О нашем аппарате Golden Black 1200W</h1>
 
                         <div class="mbr-section-text mbr-white">
-                            <p class="mbr-text align-left mbr-fonts-style mbr-white display-7">Lorem ipsum
-                                dolor sit amet, consectetur adipiscing elit. Nulla eget lectus eu ex ornare porta euismod a
-                                libero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, necessitatibus!<br><br> Phasellus vehicula placerat enim at egestas. Aliquam suscipit felis in massa
-                                hendrerit tristique. In augue diam, pellentesque nec pulvinar in, sagittis ac nulla.</p>
+                            <p class="mbr-text align-left mbr-fonts-style mbr-white display-7">Ключевое достоинство современных диодных лазеров заключается в возможности динамической работы, то есть непрерывного скольжения манипулы по телу. В аппарате заданы параметры, которые позволяют в ходе процедуры обрабатывать один участок кожи несколько раз. Чтобы на теле не появился термический ожог, косметолог учитывает объем аккумулированной в хромофорах энергии. Такая методика позволяет очень быстро провести эпиляцию одной зоны.
+                            <br><br>Лазерное устройство использует длину волны 808 нм, что на 100 % гарантирует удаление любого волоса;<br>
+                            Мощность манипулы - 1200w;
+                             <br>На манипуле натуральный Сапфир;
+                            </p>
+                            </ul>
                         </div>
                     </div>
                 </div>

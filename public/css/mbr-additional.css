@@ -1475,7 +1475,7 @@ hr {
 .cid-rR7qHdLpdl .box {
   background-image: url("../images/office-3.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: top;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1933,7 +1933,7 @@ hr {
 .cid-rR7qJ5VtJv {
   padding-top: 135px;
   padding-bottom: 135px;
-  background-image: url("../images/office-3.jpg");
+  background-image: url("../images/office-4.jpg");
 }
 .cid-rR7qJ5VtJv .mbr-text {
   margin-bottom: 3.2rem;
