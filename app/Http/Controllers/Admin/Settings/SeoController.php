@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin\Settings;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Seo;
-use App\Models\Area;
 
 
 
@@ -13,8 +12,7 @@ class SeoController extends Controller
 {
     public function index(){
         $seos = Seo::all();
-        $areas = Area::all();
-        return view('admin.settings.seo',compact( 'seos','areas'));
+        return view('admin.settings.seo',compact( 'seos'));
     }
     public function store(Request $request){
 

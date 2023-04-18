@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Lead\UpdateRequest;
 use App\Http\Controllers\Admin\Lead\BaseController;
 use App\Models\Lead;
-use App\Http\Controllers\Admin\Stat\StatController;
+use App\Http\Controllers\Admin\Stat\IndexController;
 use App\Http\Controllers\Admin\Settings\RegisterController;
 use App\Models\Statistics;
 class UpdateController extends BaseController

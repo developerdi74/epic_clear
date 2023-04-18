@@ -10,7 +10,6 @@ use App\Http\Controllers\InfoController;
 use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\Admin\Settings\SeoController;
-use App\Http\Controllers\Admin\Stat\StatController;
 use App\Http\Controllers\Admin\User;
 /*
 |--------------------------------------------------------------------------
@@ -47,10 +46,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin', '
     });
 
     Route::group(['namespace' => 'Stat'], function(){
-        Route::get('/stat', [StatController::class, 'index'])->name('admin.statistics.index');
-        Route::post('/stat', [StatController::class, 'store'])->name('admin.statistics.store');
-        Route::patch('/stat/{stat}', [StatController::class, 'update'])->name('admin.statistics.update');
-        Route::delete('/stat/{stat}', [StatController::class, 'delete'])->name('admin.statistics.delete');
+        Route::get('/stat', IndexController::class)->name('admin.statistics.index');
+        Route::post('/stat', StoreController::class)->name('admin.statistics.store');
+        Route::patch('/stat/{stat}', UpdateController::class)->name('admin.statistics.update');
+        Route::delete('/stat/{stat}', DestroyController::class)->name('admin.statistics.delete');
     });
 
     Route::group(['namespace' => 'User'], function(){

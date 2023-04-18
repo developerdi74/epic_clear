@@ -1,3 +1,7 @@
+@php
+    use App\Models\Area;
+        $areas = Area::all();
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>

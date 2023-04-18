@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="Mobirise v4.11.7, mobirise.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <title>{{ $seo->title }} | Epic Clean</title>
+    <title>{{ $seo->title }} | EPIClean</title>
     <meta name="description" content="{{ $seo->description }}">
     <meta name="keywords" content="{{ $seo->keywords }}">
     <link rel="stylesheet" href="{{asset('public/css/font-awesome.css')}}">
@@ -36,7 +36,7 @@
         <div class="container">
             <div class="navbar-brand">
             <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-2" href="{{ route('home.index') }}">
-            Epic Clean</a></span>
+            <d style="color:#b539cf">EPIC</d>lean</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
