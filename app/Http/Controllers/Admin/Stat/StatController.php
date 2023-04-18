@@ -14,7 +14,6 @@ use App\Models\Statistics;
 class StatController extends Controller
 {
     public function index(){
-
         $stats = Statistics::all();
         $areas = Area::all();
         return view('admin.statistics.finance',compact( 'stats','areas'));

@@ -39,15 +39,15 @@
                             <input type="text" class="form-control" name = 'label' placeholder="Метка" value="{{$stat->label}}">
                         </td>
                         <td>
-                            <input type="text" class="form-control" name = 'description' placeholder="Примечание" value="">
+                            <a href="{{route('admin.user.show',$stat->userdata->id)}}">{{ $stat->userdata->name }}</a>
                         </td>
                         <td>
-                            <input type="text" class="form-control" name = 'keywords' placeholder="Ключевые слова" value="{{$stat->created_at}}">
+                            {{$stat->created_at}}
                         </td>
                         <td><button type="submit" class="btn btn-primary">OK</button></td>
                     </form>
                     <td>
-                        <form action="{{route('admin.seo.delete', $stat->id)}}" method="post">
+                        <form action="{{route('admin.statistics.delete', $stat->id)}}" method="post">
                             @csrf
                             @method('delete')
                             <button  type="submit" class="btn btn-danger">Del</button>

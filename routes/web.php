@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\LeadController;
@@ -9,8 +8,10 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\HomeController;
+
 use App\Http\Controllers\Admin\Settings\SeoController;
 use App\Http\Controllers\Admin\Stat\StatController;
+use App\Http\Controllers\Admin\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,7 +55,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin', '
 
     Route::group(['namespace' => 'User'], function(){
         Route::get('/user', IndexController::class)->name('admin.user.index');
-        Route::get('/user/{user}', [ShowController::class, 'show'])->name('admin.user.show');
+        Route::get('/user/{user}', ShowController::class)->name('admin.user.show');
         Route::post('/user', [StoreController::class, 'store'])->name('admin.user.store');
         Route::patch('/user/{user}', [EditController::class, 'update'])->name('admin.user.update');
         Route::delete('/user/{user}', [DestroyController::class, 'delete'])->name('admin.user.delete');

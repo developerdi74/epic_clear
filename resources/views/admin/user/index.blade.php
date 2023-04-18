@@ -6,84 +6,55 @@
 Заявки
 @endsection
 @section('content')
-<div class="col-sm-12"><table id="example2" class="table table-bordered table-hover dataTable dtr-inline" aria-describedby="example2_info">
-        <thead>
-        <tr>
-            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">ID</th>
-            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Имя</th>
-            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Телефон</th>
-            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Процедур</th>
-            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Дата последней процедуры</th>
-            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Дата регистрации клиента</th>
-        </tr>
-        </thead>
-        <tbody>
+    <div class="row">
         @foreach($users as $user)
-            <tr class="odd">
-                <form action="{{route('admin.user.update', $user->id)}}" method="post">
-                    @csrf
-                    @method('patch')
-                    <td>
-                        <span>{{$user->id}}</span>
-                    </td>
-                    <td>
-                        <input type="text" class="form-control" name = 'title' placeholder="Имя" value="{{$user->name}}">
-                    </td>
-                    <td>
-                        <input type="text" class="form-control" name = 'title' placeholder="Тайтл" value="{{$user->email}}">
-                    </td>
-                    <td>
-                        <span>{{ $user->orders()->count() }}</span>
-                    </td>
-                    <td>
-                        <span>{{ isset($user->orders()->first()->created_at) ? $user->orders()->first()->created_at : 0}}</span>
-                    </td>
-                    <td>
-                        <input type="text" class="form-control" name = 'keywords' placeholder="Ключевые слова" value="{{$user->created_at}}">
-                    </td>
-                    <td><button type="submit" class="btn btn-primary">OK</button></td>
-                </form>
-                <td>
-                    <form action="{{route('admin.seo.delete', $user->id)}}" method="post">
-                        @csrf
-                        @method('delete')
-                        <button  type="submit" class="btn btn-danger">Del</button>
-                    </form>
-                </td>
-            </tr>
+            @php
+                $datePrev = isset($user->orders()->orderBy('id','desc')->first()->created_at) ? $user->orders()->orderBy('id','desc')->first()->created_at : 0;
+                $dateNext = date('y-M-d', strtotime($datePrev)+60*60*24*14);
+				$now = date('y-M-d',time());
+					$call = 0;
+				if(strtotime($dateNext)>strtotime($now)){
+					$call = 1;
+				}
+            @endphp
+            <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+                    <div class="card bg-light d-flex flex-fill">
+                        <div class="card-header text-muted border-bottom-0 {{($call==1)?'bg-info mb-2':'bg-light'}}">
+                            Клиент № - {{ $user->id }}
+                        </div>
+                        <div class="card-body pt-0">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="lead"><b>{{ $user->name }}</b></h2>
+                                    <p class="text-muted text-sm">
+                                        <b>Последняя процедура: </b> {{ $datePrev }}<br>
+                                        <b>Количество процедур: </b> {{ $user->orders()->count() }}<br>
+                                        <b>Следующая процедура: </b> {{ $dateNext }}<br>
+                                    </p>
+                                    <ul class="ml-4 mb-0 fa-ul text-muted">
+                                        <li class="big"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Телефон: <b>
+                                                <a href="tel:{{ $user->email }}">{{ $user->email }}</a></b>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                    <img src="/public/dist/img/user1-128x128.jpg" alt="user-avatar" class="img-circle img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="text-right">
+                                <a href="#" class="btn btn-sm bg-teal">
+                                    <i class="fas fa-comments"></i>
+                                </a>
+                                <a href="{{route('admin.user.show', $user->id)}}" class="btn btn-sm btn-primary">
+                                    <i class="fas fa-user"></i> Карточка
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
         @endforeach
-        <tr class="odd">
-            <form action="{{route('admin.seo.store')}}" method="post">
-                @csrf
-                <td>
-                    New
-                </td>
-                <td>
-                    <input type="text" class="form-control" name = 'title' placeholder="Тайтл" value="{{old('title')}}">
-                </td>
-                <td>
-                    <input type="text" class="form-control" name = 'description' placeholder="Описание страницы" value="{{old('description')}}">
-                </td>
-                <td>
-                    <input type="text" class="form-control" name = 'keywords' placeholder="Ключевые слова" value="{{old('keywords')}}">
-                </td>
-                <td>
-                    <input type="text" class="form-control" name = 'header' placeholder="Заголовок" value="{{old('header')}}">
-                </td>
-                <td><button type="submit" class="btn btn-primary">OK</button></td>
-            </form>
-        </tr>
-        </tbody>
-        <tfoot>
-        <tr>
-            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">ID</th>
-            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Тайтл</th>
-            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Описание</th>
-            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Ключевые слова</th>
-            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Заголовок</th>
-        </tr>
-        </tfoot>
-    </table>
-</div>
+    </div>
 
 @endsection

@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Statistics extends Model
 {
     use HasFactory;
     protected $guarded=[];
 
-    public function UserData(){
-        return $this->belongsTo(User::class);
+    public function userdata(){
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }
