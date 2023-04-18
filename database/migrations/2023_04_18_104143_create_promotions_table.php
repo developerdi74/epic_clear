@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('promotions', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->boolean('active')->default(1);
+            $table->string('title')->nullable();
+            $table->string('description')->nullable();
+            $table->string('image')->nullable();
+            $table->string('category')->nullable();
             $table->timestamps();
         });
     }

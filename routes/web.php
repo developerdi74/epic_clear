@@ -26,11 +26,13 @@ use App\Http\Controllers\Admin\User;
 Route::get('/', [MainController::class, 'index'])->name('home.index');
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin', 'middleware' => 'admin'], function(){
+
     Route::group(['namespace' => 'Lead'], function(){
         Route::get('/', IndexController::class)->name('admin.lead.index');
         Route::patch('/lead/{lead}', UpdateController::class)->name('admin.lead.update');
         Route::delete('/lead/{lead}', DestroyController::class)->name('admin.lead.delete');
     });
+
     Route::group(['namespace' => 'Area'], function(){
         Route::get('/area', IndexController::class)->name('admin.area.index');
         Route::patch('/area/{area}', UpdateController::class)->name('admin.area.update');
@@ -58,6 +60,14 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin', '
         Route::post('/user', [StoreController::class, 'store'])->name('admin.user.store');
         Route::patch('/user/{user}', [EditController::class, 'update'])->name('admin.user.update');
         Route::delete('/user/{user}', [DestroyController::class, 'delete'])->name('admin.user.delete');
+    });
+
+    Route::group(['namespace' => 'Promotion'], function(){
+        Route::get('/promo', IndexController::class)->name('admin.promo.index');
+        Route::get('/promo/{promo}', ShowController::class)->name('admin.promo.show');
+        Route::post('/promo', StoreController::class)->name('admin.promo.store');
+        Route::patch('/promo/{promo}', UpdateController::class)->name('admin.promo.update');
+        Route::delete('/promo/{promo}', DestroyController::class)->name('admin.promo.delete');
     });
 });
 

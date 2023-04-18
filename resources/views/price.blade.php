@@ -13,25 +13,17 @@
             </div>
         </div>
     </section>
-    <section class="page_container" id="">
-        <table class="table table-dark">
-            <thead>
-            <tr>
-                <td>№</td>
-                <td>Название зоны</td>
-                <td>Стоимость</td>
-            </tr>
-            </thead>
-            <tbody>
+    <section class="page_container">
+        <div class="row">
             @foreach($areas as $area)
-                <tr>
-                    <th scope="col">{{$area->id}}</th>
-                    <th scope="col">{{$area->name}}</th>
-                    <th scope="col">{{$area->price}} руб.</th>
-                </tr>
+                <div class="col-lg-6 text-light text-bold font-italic text-lg-right text-sm-center display-5 border_bottom_epic">
+                    {{$area->name}}
+                </div>
+                <div class="col-lg-6 text-white text-bold font-italic display-5 text-lg-left text-sm-center border_bottom_epic">
+                    {{$area->price}} руб.
+                </div>
             @endforeach
-            </tbody>
-        </table>
+        </div>
     </section>
 
 @endsection

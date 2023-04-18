@@ -56,9 +56,16 @@
                 <span class="badge badge right">{{ DB::table('leads')->where('process', 'like','delete')->where('deleted_at',NULL)->count() }}</span>
             </a>
         </li>
+        <li class="nav-header">Контент</li>
+        <li class="nav-item">
+            <a href="{{ route('admin.promo.index') }}" class="nav-link {{ (Route::currentRouteName() == 'admin.promo.index') ? 'active' : '' }}">
+                <i class="fas fa-list nav-icon"></i>
+                <p>Акции</p>
+            </a>
+        </li>
         <li class="nav-header">Статистика</li>
         <li class="nav-item">
-            <a href="{{ route('admin.statistics.index') }}" class="nav-link {{ (Route::currentRouteName() == 'admin.area.index') ? 'active' : '' }}">
+            <a href="{{ route('admin.statistics.index') }}" class="nav-link {{ (Route::currentRouteName() == 'admin.statistics.index') ? 'active' : '' }}">
                 <i class="fas fa-list nav-icon"></i>
                 <p>Доходы</p>
             </a>

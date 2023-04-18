@@ -140,8 +140,13 @@ section .left-block{
     cursor: pointer;
     margin: 0px;
 }
+
 .cid-rR7qDAC8K6 .btn-logout:hover::before{
     height: 2px;
     width: 20px;
     background-color: #b539cf;
+}
+
+.border_bottom_epic{
+    border-bottom: 2px solid #aa3ac2;
 }
