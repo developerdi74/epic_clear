@@ -30,6 +30,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin', '
     Route::group(['namespace' => 'Lead'], function(){
         Route::get('/', IndexController::class)->name('admin.lead.index');
         Route::patch('/lead/{lead}', UpdateController::class)->name('admin.lead.update');
+        Route::get('/leads/create', CreateController::class)->name('admin.lead.create');
+        Route::post('/lead/', StoreController::class)->name('admin.lead.store');
         Route::delete('/lead/{lead}', DestroyController::class)->name('admin.lead.delete');
     });
 
@@ -57,17 +59,19 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin', '
     Route::group(['namespace' => 'User'], function(){
         Route::get('/user', IndexController::class)->name('admin.user.index');
         Route::get('/user/{user}', ShowController::class)->name('admin.user.show');
-        Route::post('/user', [StoreController::class, 'store'])->name('admin.user.store');
-        Route::patch('/user/{user}', [EditController::class, 'update'])->name('admin.user.update');
+        Route::patch('/user/{user}', UpdateController::class)->name('admin.user.update');
         Route::delete('/user/{user}', [DestroyController::class, 'delete'])->name('admin.user.delete');
     });
 
     Route::group(['namespace' => 'Promotion'], function(){
         Route::get('/promo', IndexController::class)->name('admin.promo.index');
-        Route::get('/promo/{promo}', ShowController::class)->name('admin.promo.show');
         Route::post('/promo', StoreController::class)->name('admin.promo.store');
         Route::patch('/promo/{promo}', UpdateController::class)->name('admin.promo.update');
         Route::delete('/promo/{promo}', DestroyController::class)->name('admin.promo.delete');
+    });
+
+    Route::group(['namespace' => 'Calendar'], function(){
+        Route::get('/calendar', IndexController::class)->name('admin.calendar.index');
     });
 });
 

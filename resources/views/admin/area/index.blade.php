@@ -6,9 +6,10 @@
     Зоны работы и стоимость
 @endsection
 @section('content')
-<div class="col-sm-12"><table id="example2" class="table table-bordered table-hover dataTable dtr-inline" aria-describedby="example2_info">
+<div class="col-sm-12 overflow-auto">
+    <table id="example2" class="table table-bordered table-head-fixed dataTable dtr-inline" style="min-width:500px;" aria-describedby="example2_info">
                 <thead>
-                <tr>
+                <tr class="odd">
                     <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="" aria-sort="ascending">ID</th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Название</th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Цена</th>
@@ -18,8 +19,8 @@
                 </thead>
                 <tbody>
                 @foreach($areas as $area)
-                <tr class="odd">
-                    <form action="{{route('admin.area.update', $area->id)}}" method="post">
+                <tr class="odd w-auto" >
+                    <form action="{{route('admin.area.update', $area->id)}}" method="post" class="odd overflow-auto">
                         @csrf
                         @method('patch')
                     <td class="dtr-control sorting_1" tabindex="0">{{$area->id}}</td>
@@ -60,7 +61,7 @@
                 </tr>
                 </tbody>
                 <tfoot>
-                <tr>
+                <tr class="odd">
                     <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="" aria-sort="ascending">ID</th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Название</th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Цена</th>

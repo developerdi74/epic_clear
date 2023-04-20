@@ -18,11 +18,13 @@ class IndexController extends Controller
         if(isset($data['process'])){
             $query->where('process','like', "%{$data['process']}%");
             $leads = $query->orderBy('time', 'asc')->get();
-
         }else{
             $leads = $query->orderBy('id', 'desc')->get();
         }
-
+        if(isset($data['phone'])){
+            $query->where('phone','like', "%{$data['phone']}%");
+            $leads = $query->orderBy('time', 'asc')->get();
+        }
         /*$leads = Lead::orderBy('id', 'desc')->paginate(2);*/
         $areas = Area::all();
         return view('admin.lead.index',compact('leads', 'areas'));

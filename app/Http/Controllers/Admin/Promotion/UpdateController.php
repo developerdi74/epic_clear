@@ -3,19 +3,29 @@
 namespace App\Http\Controllers\Admin\Promotion;
 
 use App\Http\Controllers\Controller;
-use App\Models\Statistics;
+use App\Models\Promotion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UpdateController extends Controller
 {
-    public function __invoke(Statistics $stat, Request $request){
+    public function __invoke(Promotion $promo, Request $request){
         $data = $request->validate([
-            'type' => '',
-            'summa' => '',
-            'user_id' => '',
-            'label' => '',
+            'title' => '',
+            'description' => '',
+            'category' => '',
+            'image' => 'image',
+            'image' => 'mimetypes:image/jpeg,image/png',
+            'active'=>'',
         ]);
-        $stat->update($data);
-        return redirect()->route('admin.statistics.index');
+        if($request->file('image')){
+            $file = $request->file('image');
+            $upload_folder = 'public/promo';
+            $filename = $file->getClientOriginalName();
+            $uploadFile = Storage::putFileAs($upload_folder, $file, $filename);
+            $data['image']='public/storage/promo/'.$filename;
+        }
+        $promo->update($data);
+        return redirect()->route('admin.promo.index');
     }
 }

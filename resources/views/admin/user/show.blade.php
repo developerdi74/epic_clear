@@ -50,13 +50,13 @@
                     <div class="card">
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">История процедур</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Настройки</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Параметры</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#activity" data-toggle="tab">История процедур</a></li>
                             </ul>
                         </div><!-- /.card-header -->
                         <div class="card-body">
                             <div class="tab-content">
-                                <div class="tab-pane active" id="activity">
+                                <div class="tab-pane" id="activity">
                                     <!-- Post -->
                                     <div class="card-body table-responsive p-0">
                                         <table class="table table-hover text-nowrap">
@@ -80,36 +80,42 @@
                                             </tbody>
                                         </table>
                                     </div>
-
-
-
-
-                                    <div class="post">
-                                        <div class="user-block">
-
-                                        </div>
-                                    <!-- /.post -->
-                                    </div>
                                 </div>
                                 <!-- /.tab-pane -->
-                                <div class="tab-pane" id="settings">
-                                    <form class="form-horizontal">
+                                <div class="tab-pane active" id="settings">
+                                    <form class="form-horizontal" action="{{route('admin.user.update',$user->id)}}" method="post">
+                                        @csrf
+                                        @method('patch')
                                         <div class="form-group row">
-                                            <label for="inputName" class="col-sm-2 col-form-label">Примечания</label>
+                                            <label for="inputname" class="col-sm-2 col-form-label">Имя</label>
                                             <div class="col-sm-10">
-                                                <input type="email" class="form-control" id="inputName" placeholder="Name">
+                                                <input type="text" class="form-control" id="inputname" name='name' placeholder="Имя клиента" value="{{$user->name}}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="inputEmail" class="col-sm-2 col-form-label">Настройки лазера</label>
+                                            <label for="inputNote" class="col-sm-2 col-form-label">Примечания</label>
                                             <div class="col-sm-10">
-                                                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                                <input type="text" class="form-control" id="inputNote" name='notes' placeholder="Пометки по клиенту" value="{{$user->notes}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputtext" class="col-sm-2 col-form-label">Настройки лазера</label>
+                                            <div class="col-sm-10">
+                                                <textarea name="params" class="form-control"  id="inputtext" cols="30" rows="10" placeholder="Параметры настройки">
+{{ ($user->params)? $user->params :
+ 'Энергия:
+Частота:
+Импульс:' }}
+
+
+
+                                                </textarea>
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <div class="offset-sm-2 col-sm-10">
-                                                <button type="submit" class="btn btn-danger">Submit</button>
+                                                <button type="submit" class="btn btn-danger">Отправить</button>
                                             </div>
                                         </div>
                                     </form>

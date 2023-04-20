@@ -6,7 +6,7 @@
     Статистика доходов и расходов
 @endsection
 @section('content')
-<div class="col-sm-12"><table id="example2" class="table table-bordered table-hover dataTable dtr-inline" aria-describedby="example2_info">
+<div class="col-sm-12 overflow-auto"><table id="example2" class="table table-bordered table-hover dataTable dtr-inline"  style="min-width:1000px;" aria-describedby="example2_info">
                 <thead>
                 <tr>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">ID</th>

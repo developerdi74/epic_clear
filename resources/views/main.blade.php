@@ -173,135 +173,38 @@
                 <div class="col-lg-12 align-center">
                     <h2 class="mbr-fonts-style mbr-section-title mbr-bold mbr-black display-2">Акции</h2>
                     <p class="mbr-text mbr-fonts-style display-7">
-                        Отличные акции для Вашего тела
+                        Для вашего внимания мы предлагаем интересные акции
                     </p>
                 </div>
             </div>
         </div>
     </section>
-
+@php
+$promos = \App\Http\Controllers\Promo\IndexController::getPromo();
+@endphp
     <section class="carousel slide testimonials-slider extTestimonials cid-rR7qIJLIwV" data-interval="false" id="slider4-7">
-
-
         <div class="container align-center">
             <div class="row">
-                <div class="carousel slide pt-4" role="listbox" data-pause="true" data-keyboard="false" data-ride="false" data-interval="false">
-                    <!-- <div mbr-list mbr-list-grow="testimonialsSlides" class="carousel-inner"> -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    </ol>
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-md-6 img-card col-lg-4">
-
-                                <div class="img-block">
-                                    <div class="wrapper-img">
-                                        <img src="public/images/people-3.jpg">
-                                    </div>
-                                    <div class="title-block align-left">
-                                        <h5 class="desk mbr-fonts-style display-4">Ножная акция</h5>
-                                        <h4 class="mbr-fonts-style signature mbr-bold mbr-black display-5">1 + 1 = 2</h4>
-                                        <p class="mbr-text mbr-fonts-style display-7">
-                                            Запишись делать одну ногу получи вторую в подарок!!!
-                                        </p>
-                                    </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        @foreach($promos as $promo)
+                        <div class="col-md-6 img-card col-lg-4">
+                            <div class="img-block">
+                                <div class="wrapper-img">
+                                    <img src="{{$promo->image}}">
+                                </div>
+                                <div class="title-block align-left">
+                                    <h5 class="desk mbr-fonts-style display-4">{{$promo->category}}</h5>
+                                    <h4 class="mbr-fonts-style signature mbr-bold mbr-black display-5">{{$promo->title}}</h4>
+                                    <p class="mbr-text mbr-fonts-style display-7">
+                                        {{$promo->description}}
+                                    </p>
                                 </div>
                             </div>
-                            <div class="col-md-6 img-card col-lg-4">
-                                <div class="img-block">
-                                    <div class="wrapper-img">
-                                        <img src="public/images/people-4.jpg">
-                                    </div>
-                                    <div class="title-block align-left">
-                                        <h5 class="desk mbr-fonts-style display-4">Сюда иди</h5>
-                                        <h4 class="mbr-fonts-style signature mbr-bold mbr-black display-5">Подставь другого</h4>
-                                        <p class="mbr-text mbr-fonts-style display-7">
-                                            Приведи друга на процедуру получи скидку 10%
-                                        </p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 img-card col-lg-4">
-                                <div class="img-block">
-                                    <div class="wrapper-img">
-                                        <img src="public/images/people-1.jpg">
-                                    </div>
-                                    <div class="title-block align-left">
-                                        <h5 class="desk mbr-fonts-style display-4">Самосожжение</h5>
-                                        <h4 class="mbr-fonts-style signature mbr-bold mbr-black display-5">Не кричи!</h4>
-                                        <p class="mbr-text mbr-fonts-style display-7">
-                                            Не издавай звуков при горении кожи, получи кружку чая бесплатно! А если не заплачишь получишь печеньку!
-                                        </p>
-
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col-md-6 img-card col-lg-4">
-                                <div class="img-block">
-                                    <div class="wrapper-img">
-                                        <img src="public/images/people-1.jpg">
-                                    </div>
-                                    <div class="title-block align-left">
-                                        <h5 class="desk mbr-fonts-style display-4">CREATIVE BRIEF</h5>
-                                        <h4 class="mbr-fonts-style signature mbr-bold mbr-black display-5">Social Media Ads</h4>
-                                        <p class="mbr-text mbr-fonts-style display-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius alias corporis voluptas dolor? Cum quisquam quasi...</p>
-                                        <h5 class="subtitle-link align-left mbr-fonts-style display-7"><a href="#" class="text-danger link">
-                                                Continue Reading</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 img-card col-lg-4">
-
-                                <div class="img-block">
-                                    <div class="wrapper-img">
-                                        <img src="public/images/people-6.jpg">
-                                    </div>
-                                    <div class="title-block align-left">
-                                        <h5 class="desk mbr-fonts-style display-4">PRODUCTION<br></h5>
-                                        <h4 class="mbr-fonts-style signature mbr-bold mbr-black display-5">Photo Production</h4>                 <p class="mbr-text mbr-fonts-style display-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius alias corporis voluptas dolor? Cum quisquam quasi...</p>
-                                        <h5 class="subtitle-link align-left mbr-fonts-style display-7"><a href="#" class="text-danger link">
-                                                Continue Reading</a></h5>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 img-card col-lg-4">
-                                <div class="img-block">
-                                    <div class="wrapper-img">
-                                        <img src="public/images/people-5.jpg">
-                                    </div>
-                                    <div class="title-block align-left">
-
-                                        <h5 class="desk mbr-fonts-style display-4">CREATIVE BRIEF</h5>
-                                        <h4 class="mbr-fonts-style signature mbr-bold mbr-black display-5">Seo Marketing</h4>
-                                        <p class="mbr-text mbr-fonts-style display-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius alias corporis voluptas dolor? Cum quisquam quasi...</p>
-                                        <h5 class="subtitle-link align-left mbr-fonts-style display-7"><a href="#" class="text-danger link">
-                                                Continue Reading</a></h5>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
+                            @endforeach
                     </div>
                 </div>
-                <!-- <div class="carousel-controls">
-                  <a class="carousel-control-prev" role="button" data-slide="prev">
-                    <span aria-hidden="true" class="mbri-left mbr-iconfont"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" role="button" data-slide="next">
-                    <span aria-hidden="true" class="mbri-right mbr-iconfont"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-              </div> -->
             </div>
         </div>
         <!-- </div> -->

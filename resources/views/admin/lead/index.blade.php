@@ -1,11 +1,19 @@
 @extends('layouts.admin')
 @section('title')
-    Заявки
+Заявки
 @endsection
 @section('header')
 Заявки
 @endsection
 @section('content')
+    <div class="col-md-12 mb-3">
+        <div class="col-md-3 p-0">
+            <form class="text-dark" action="{{route('admin.lead.index')}}" method="get">
+            <input type="text"  class="form-control w-auto d-inline-block align-top" placeholder="По номеру телефона" name="phone">
+            <input type="submit" class="btn btn-info  w-auto d-inline-block" value="Фильтр">
+            </form>
+        </div>
+    </div>
         @foreach($leads as $lead)
             @php
                 $sum = 0;

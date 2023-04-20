@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 @section('title')
-    Заявки
+    Клиенты
 @endsection
 @section('header')
-Заявки
+Список клиентов
 @endsection
 @section('content')
     <div class="row">

@@ -5,6 +5,18 @@
         <li class="nav-item menu-open">
             <ul class="nav nav-treeview">
                 <li class="nav-item">
+                    <a href="{{ route('admin.calendar.index') }}" class="nav-link {{ (Route::currentRouteName()=='admin.calendar.index') ? 'active' : '' }}">
+                        <i class="far fa-envelope nav-icon"></i>
+                        <p>Календарь</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.lead.create') }}" class="nav-link {{ (Route::currentRouteName()=='admin.lead.create') ? 'active' : '' }}">
+                        <i class="far fa-envelope nav-icon"></i>
+                        <p>Создать заявку</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('admin.lead.index') }}" class="nav-link {{ (Route::currentRouteName()=='admin.lead.index') ? 'active' : '' }}">
                         <i class="far fa-envelope nav-icon"></i>
                         <p>Заявки</p>
