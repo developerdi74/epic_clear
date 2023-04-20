@@ -10,12 +10,15 @@
         @foreach($users as $user)
             @php
                 $datePrev = isset($user->orders()->orderBy('id','desc')->first()->created_at) ? $user->orders()->orderBy('id','desc')->first()->created_at : 0;
-                $dateNext = date('y-M-d', strtotime($datePrev)+60*60*24*14);
+                $dateNext = date('y-M-d', strtotime($datePrev)+60*60*24*7*4);
 				$now = date('y-M-d',time());
-					$call = 0;
-				if(strtotime($dateNext)>strtotime($now)){
+				$call = 0;
+				$d1 = strtotime($dateNext)+60*60*24*7*4;
+				$d2 = time();
+				if($d1>$d2){
 					$call = 1;
 				}
+				echo $datePrev;
             @endphp
             <div class="col-12 col-sm-6 col-md-3 d-flex align-items-stretch flex-column">
                     <div class="card bg-light d-flex flex-fill">
