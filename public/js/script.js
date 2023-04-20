@@ -5,4 +5,49 @@ $(window).on('load', function(){
             console.log(elem);
         });
     })*/
-})
+    $(".addSaveDate").on('click', function(){
+        $a = $(this).attr('data-date');
+        $('.addSaveDate').removeClass('green');
+        $(this).addClass('green');
+        console.log($a);
+    });
+
+});
+
+//смена сладов смахом пальцев
+$(".carousel").on("touchstart", function (event) {
+    var xClick = event.originalEvent.touches[0].pageX;
+    $(this).one("touchmove", function (event) {
+        var xMove = event.originalEvent.touches[0].pageX;
+        if (Math.floor(xClick - xMove) > 5) {
+            $(this).carousel('next');
+        }
+        else if (Math.floor(xClick - xMove) < -5) {
+            $(this).carousel('prev');
+        }
+    });
+    $(".carousel").on("touchend", function () {
+        $(this).off("touchmove");
+    });
+});
+
+var xClick;
+var mouseDown;
+$(".carousel").on("mousedown", function (event) {
+    xClick = event.pageX;
+    mouseDown = true;
+});
+$(".carousel").on("mousemove", function (event) {
+    if (mouseDown) {
+        var xMove = event.pageX;
+        if (Math.floor(xClick - xMove) > 5) {
+            $(this).carousel('next');
+        }
+        else if (Math.floor(xClick - xMove) < -5) {
+            $(this).carousel('prev');
+        }
+    }
+});
+$(".carousel").on("mouseup", function (event) {
+    mouseDown = false;
+});

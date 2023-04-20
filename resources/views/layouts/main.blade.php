@@ -18,12 +18,14 @@
     <link rel="stylesheet" href="{{asset('public/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/bootstrap-grid.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/bootstrap-reboot.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/css/jquery.formstyler.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/jquery.formstyler.theme.css')}}">
-    <link rel="stylesheet" href="{{asset('public/css/jquery.datetimepicker.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/styles.css')}}">
+    <!---
+    <link rel="preload" as="style" href="asset('assets/mobirise/css/mbr-additional.css')">
+    <link rel="stylesheet" href="{{asset('public/css/jquery.datetimepicker.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/recaptcha.css')}}">
-    <!---<link rel="preload" as="style" href="asset('assets/mobirise/css/mbr-additional.css')">-->
+    <link rel="stylesheet" href="{{asset('public/css/jquery.formstyler.css')}}">
+    -->
     <link rel="stylesheet" href="{{asset('public/css/mbr-additional.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('public/css/mystyle.css')}}">
 
@@ -75,7 +77,7 @@
                     @endif
                     @can('view', auth()->user())
                         <li class="nav-item">
-                            <a class="nav-link link text-white display-4" href="{{ route('home') }}">
+                            <a class="nav-link link text-white display-4" href="{{ route('admin.calendar.index') }}">
                                 Панель</a>
                         </li>
                     @endcan
@@ -195,20 +197,21 @@
     </div>
 </section>
 <script src="{{asset('public/js/jquery.min.js')}}"></script>
-<script src="{{asset('public/js/popper.min.js')}}"></script>
-<script src="{{asset('public/js/tether.min.js')}}"></script>
 <script src="{{asset('public/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('public/js/jquery.touch-swipe.min.js')}}"></script>
-<script src="{{asset('public/js/jquery.formstyler.js')}}"></script>
-<script src="{{asset('public/js/jquery.formstyler.min.js')}}"></script>
-<script src="{{asset('public/js/bootstrap-carousel-swipe.js')}}"></script>
-<script src="{{asset('public/js/mbr-testimonials-slider.js')}}"></script>
-<script src="{{asset('public/js/smooth-scroll.js')}}"></script>
-<script src="{{asset('public/js/jquery.datetimepicker.full.js')}}"></script>
-<script src="{{asset('public/js/nav-dropdown.js')}}"></script>
 <script src="{{asset('public/js/navbar-dropdown.js')}}"></script>
+<script src="{{asset('public/js/jquery.touch-swipe.min.js')}}"></script>
+<script src="{{asset('public/js/jquery.formstyler.min.js')}}"></script>
 <script src="{{asset('public/js/script.js')}}"></script>
-
+<!---
+<script src="{{asset('public/js/popper.min.js')}}"></script>
+<script src="{{asset('public/js/jquery.datetimepicker.full.js')}}"></script>
+<script src="{{asset('public/js/smooth-scroll.js')}}"></script>
+<script src="{{asset('public/js/nav-dropdown.js')}}"></script>
+<script src="{{asset('public/js/mbr-testimonials-slider.js')}}"></script>
+<script src="{{asset('public/js/tether.min.js')}}"></script>
+<script src="{{asset('public/js/jquery.formstyler.js')}}"></script>
+<script src="{{asset('public/js/bootstrap-carousel-swipe.js')}}"></script>
+--->
 </body>
 </html>
 

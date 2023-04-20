@@ -150,3 +150,60 @@ section .left-block{
 .border_bottom_epic{
     border-bottom: 2px solid #aa3ac2;
 }
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
+}
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e")
+}
+#calendarSlider a{
+    max-height: 43px;
+}
+.select_hidden select{
+    visibility: hidden;
+}
+.select_hidden .jq-selectbox__dropdown{
+    top: 100% !important;
+}
+.select_hidden .jq-selectbox__dropdown li{
+    background-color: #fff;
+    list-style-type: none;
+}
+.select_hidden .jq-selectbox__dropdown li:hover, .select_hidden .jq-selectbox__dropdown .selected{
+    background-color: #b539cf !important;
+    list-style-type: none;
+}
+.dragArea .jq-selectbox__select{
+    padding: 0rem 1rem !important;
+    background-color: #f3f3f3;
+    box-shadow: none;
+    color: #565656;
+    line-height: 1.43;
+    min-height: 3.5em;
+    padding: 1.07em 0.5em;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.dragArea .jq-selectbox__select-text{
+    padding: 1rem 0rem !important;
+
+}
+.jq-selectbox{
+    position:relative;
+    padding: 1rem;
+}
+.addSaveDate{
+    cursor:pointer;
+}
+.green{
+    background-color: #16ff00 !important;
+}
+.blue{
+    background-color: dodgerblue !important;
+}
+
+.red{
+    background-color: #ff2929 !important;
+}

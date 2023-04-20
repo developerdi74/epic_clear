@@ -31,8 +31,12 @@
                                 <input type="phone" name="phone" value="{{ old('phone') }}" placeholder="Телефон"class="form-control display-7" id="Email-header3-1">
                                 @error('phone') <p class="error">Поле телефон обязательно для заполнения</p> @enderror
                             </div>
-                            <div data-for="time" class="col-lg-12 form-group">
-                                <input type="datetime-local" name="time" value="{{ old('time') }}" placeholder="" class="form-control display-7" id="form-date-input">
+                            <div data-for="time" class="col-lg-8 col-sm-12 form-group">
+                                @include('lead.calendar')
+                                <input type="datetime-local" style="display: none" name="time" value="{{ old('time') }}" placeholder="" class="form-control display-7" id="form-date-input">
+                            </div>
+                            <div data-for="time" class="col-lg-4 col-sm-12 form-group">
+                                @include('lead.time')
                             </div>
                             <div data-for="phone" class="col-lg-12 form-group">
                                 <span>Зоны работы</span>
@@ -58,3 +62,4 @@
             </div>
         </div>
     </section>
+@endsection
