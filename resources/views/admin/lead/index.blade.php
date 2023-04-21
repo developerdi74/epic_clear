@@ -7,7 +7,7 @@
 @endsection
 @section('content')
     <div class="col-md-12 mb-3">
-        <div class="col-md-3 p-0">
+        <div class="col-md-4 p-0">
             <form class="text-dark" action="{{route('admin.lead.index')}}" method="get">
             <input type="text"  class="form-control w-auto d-inline-block align-top" placeholder="По номеру телефона" name="phone">
             <input type="submit" class="btn btn-info  w-auto d-inline-block" value="Фильтр">
@@ -29,25 +29,28 @@
                     @endif
                 @endforeach
             @endforeach
-            <div class="col-md-6">
+            <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="card {{ ($lead->process == 'new') ? 'card-warning' :
                         (($lead->process == 'delete') ? 'card-danger' :
                             (($lead->process == 'update') ? 'card-info'  :'card-success')) }} border border-dark">
                     <div class="card-header">
-                        <h3 class="card-title">Заявка № - {{ $lead->id }}</h3>
+                        <h3 class="card-title">Имя: <span class="font-weight-bold">{{$lead->name}} </span>  |
+                            Дата: <span class="font-weight-bold">{{ date('Y-m-d H:i',strtotime($lead->time)) }}</span>  |
+                            Телeфон: <span class="font-weight-bold"><a href="tel:{{$lead->phone}}">{{ $lead->phone }}</span></h3></a>
                     </div>
                     <!-- /.card-header -->
-                        <form class="text-dark" action="{{route('admin.lead.update', $lead->id)}}" method="post">
+                    <div class="lead_window d-none">
+                        <form class="text-dark lead_window" id="" action="{{route('admin.lead.update', $lead->id)}}" method="post">
                             @csrf
                             @method('patch')
                             <div class="card-body">
                             <div class="row">
 
-                                <div class="col-sm-12">
-                                    <div class="form-group">
+                                <div class="col-sm-12 row">
+                                    <div class="col-sm-6">
                                         <span>Цена заявки - </span>{{ $sum }}
                                     </div>
-                                    <div class="form-group">
+                                    <div class="col-sm-6">
                                         <span>С учетом скидки за {{$countArea}} зоны - </span>{{ $sum-$sum*$discount }}
                                     </div>
                                 </div>
@@ -69,18 +72,22 @@
                                     <!-- text input -->
                                     <div class="form-group">
                                         <label>Имя</label>
-                                        <input type="text" class="form-control" name="name" placeholder="Enter ..." value="{{ $lead->name }}">
+                                        <input type="text" class="form-control" name="name" placeholder="Имя" value="{{ $lead->name }}">
                                     </div>
-                                    <div class="form-group">
-                                        <label>Дата</label>
-                                        <input type="datetime-local" class="form-control" name="time"  placeholder="Enter ..." value="{{ $lead->time }}">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Телефон</label>
                                         <input type="text" class="form-control" placeholder="Enter ..." name="phone" value="{{ $lead->phone }}">
                                     </div>
+                                    <div data-for="time" class="col-lg-12 col-sm-12 form-group">
+                                        @include('lead.calendar')
+                                    </div>
+                                    <div data-for="time" class="time_block_select col-lg-12 col-sm-12 form-group">
+                                        <div class="selectTime"></div>
+                                        <div class="selectDate">{{$lead->time}}</div>
+                                        <input type="datetime-local" name="time" value="{{$lead->time}}" placeholder="Дата" class="form-control display-7 date_input" id="form-date-input">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Выбранные зоны</label>
                                         @foreach($areas as $area)
@@ -128,6 +135,7 @@
                                 <button  type="submit" class="btn btn-danger w-25" id="delete_btn">Удалить</button>
                             </form>
                         </div>
+                    </div>
                 </div>
             </div>
         @endforeach

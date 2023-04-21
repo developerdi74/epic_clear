@@ -203,6 +203,7 @@
 <script src="{{asset('public/js/jquery.touch-swipe.min.js')}}"></script>
 <script src="{{asset('public/js/jquery.formstyler.min.js')}}"></script>
 <script src="{{asset('public/js/script.js')}}"></script>
+<script src="{{asset('public/js/main.js')}}"></script>
 <!---
 <script src="{{asset('public/js/popper.min.js')}}"></script>
 <script src="{{asset('public/js/jquery.datetimepicker.full.js')}}"></script>

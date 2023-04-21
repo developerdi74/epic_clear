@@ -13,7 +13,6 @@ class StoreController extends BaseController
         $data = $request->validated(); //Реквест для валидации данных из формы StoreRequest
 
         $this->service->store($data);
-        $success = 1;
-        return redirect()->route('admin.lead.index', compact('success'));
+        return redirect()->route('admin.calendar.index');
     }
 }

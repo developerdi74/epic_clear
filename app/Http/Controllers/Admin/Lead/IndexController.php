@@ -19,19 +19,15 @@ class IndexController extends Controller
         if(isset($data['process'])){
             $query->where('process','like', "%{$data['process']}%");
             $leads = $query->orderBy('time', 'asc')->get();
-        }else{
-            $leads = $query->orderBy('id', 'desc')->get();
-        }
-
-        if(isset($data['phone'])){
+        }elseif(isset($data['phone'])){
             $query->where('phone','like', "%{$data['phone']}%");
             $leads = $query->orderBy('time', 'asc')->get();
-        }
-
-        if(isset($_GET['date'])){
+        }elseif(isset($_GET['date'])){
             $time = date('Y-m-d',strtotime($_GET['date']));
             $query->where('time','like', "%{$time}%");
             $leads = $query->orderBy('time', 'asc')->get();
+        }else{
+            $leads = $query->orderBy('id', 'desc')->get();
         }
         /*$leads = Lead::orderBy('id', 'desc')->paginate(2);*/
         $areas = Area::all();

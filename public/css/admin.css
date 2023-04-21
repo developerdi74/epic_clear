@@ -1,0 +1,18 @@
+.custom-checkbox {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+    cursor: pointer;
+}
+.select_hidden select{
+    display:none;
+}
+.jq-selectbox{
+    padding: 0px;
+}
+.disabled{
+    color: #babbbc;
+}
+.btn-outline-light:hover, .btn-outline-light:not(:disabled):not(.disabled):active{
+    background-color: unset;
+}

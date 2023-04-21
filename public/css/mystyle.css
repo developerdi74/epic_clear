@@ -215,5 +215,5 @@ section .left-block{
     border-radius: 5px;
  }
 .no-gutters>.col:hover{
-    background-color: #b8a2e0;
+    background-color: #b8a2e0 !important;
 }

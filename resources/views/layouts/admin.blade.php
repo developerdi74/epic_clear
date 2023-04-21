@@ -9,25 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Epic Clean | @yield('title')</title>
 
-    <!-- Google Font: Source Sans Pro -->
-{{--    <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback') }}">--}}
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('public/plugins/fontawesome-free/css/all.min.css') }}">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="{{ asset('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') }}">
-    <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="{{ asset('public/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="{{ asset('public/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-    <!-- JQVMap -->
-    <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('public/dist/css/adminlte.min.css') }}">
-    <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{ asset('public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
-    <!-- Daterange picker -->
     <link rel="stylesheet" href="{{ asset('public/plugins/daterangepicker/daterangepicker.css') }}">
-    <!-- summernote -->
+    <link rel="stylesheet" href="{{asset('public/css/mystyle.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/admin.css')}}">
+
+
+    <!---
+    <link rel="stylesheet" href="{{ asset('public/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/plugins/daterangepicker/daterangepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/plugins/summernote/summernote-bs4.min.css') }}">
+    --->
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -145,5 +141,8 @@
 <script src="{{asset('public/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('public/dist/js/adminlte.js')}}"></script>
+<script src="{{asset('public/js/jquery.formstyler.min.js')}}"></script>
+<script src="{{asset('public/js/jquery.inputmask.min.js')}}"></script>
+<script src="{{asset('public/js/main.js')}}"></script>
 </body>
 </html>

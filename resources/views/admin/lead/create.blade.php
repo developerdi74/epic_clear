@@ -12,7 +12,7 @@
                         <h3 class="card-title">Новая заявка</h3>
                     </div>
                     <!-- /.card-header -->
-                        <form class="text-dark" action="{{route('admin.lead.store')}}" method="post">
+                        <form class="text-dark dragArea" action="{{route('admin.lead.store')}}" method="post">
                             @csrf
                             <div class="card-body">
                             <div class="row">
@@ -36,10 +36,16 @@
                                         <label>Имя</label>
                                         <input type="text" class="form-control" name="name" placeholder="Введите имя" value="{{ old('name') }}">
                                     </div>
-                                    <div class="form-group">
-                                        <label>Дата</label>
-                                        <input type="datetime-local" class="form-control" name="time"  value="{{  old('time')  }}">
+                                    <div data-for="time" class="col-lg-12 col-sm-12 form-group">
+                                        @include('lead.calendar')
                                     </div>
+                                    <div data-for="time" class="time_block_select col-lg-12 col-sm-12 form-group d-none">
+                                        <div class="selectTime"></div>
+                                        <div class="selectDate"></div>
+                                        <input type="datetime-local" name="time" readonly value="{{ old('time') }}" placeholder="" class="form-control display-7 date_input d-none" id="form-date-input">
+                                    </div>
+
+
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">

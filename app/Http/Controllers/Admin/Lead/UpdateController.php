@@ -27,7 +27,7 @@ class UpdateController extends BaseController
         }
         $this->service->update($data, $lead);
 
-        return redirect()->route('admin.lead.index', $lead->id);
+        return redirect()->route('admin.calendar.index');
     }
 }
 
