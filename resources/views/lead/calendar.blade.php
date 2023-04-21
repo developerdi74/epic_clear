@@ -1,17 +1,16 @@
     @php
-        $leads = \App\Models\Lead::where('process','new')->orWhere('process','success')->get();
+        /* = \App\Models\Lead::where('process','new')->orWhere('process','success')->get();
 		foreach($leads as $lead){
 			$leadsData[date('Y-m-d', strtotime($lead->time))] = $lead->process;
-		}
+		}*/
 		//dd($leadsData);
         $monthes = array("s","Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь");
         $nmWeek = array("ВС","ПН","ВТ","СР","ЧТ","ПТ","СБ");
             $dayNow = date('d', time());
             $countDays = cal_days_in_month(CAL_GREGORIAN, date('m', time()), date('y', time()));
-            $monthNow = date('w', time());
+            $monthNow = date('m', time());
             $yearNow = date('y', time());
-			$dayday = date('w', );
-
+			$dayday = date('d', time());
 			$activeMonth = 1;
     @endphp
     <label for="calendarSlider">Желаемая дата:</label>
@@ -64,21 +63,21 @@
                         <? $prevOK=1;?>
                         <? for($prevMonthDay=$prevMonthDays-$week; $prevMonthDay<=$prevMonthDays; $prevMonthDay++):?>
                         <div id="" class="col p-0">
-                        <span class="btn p-0 border-0 rounded-circle text-nowrap btn-outline-light text-dark disabled font-weight-bold"><?=$prevMonthDay?></span>
+                        <span class="btn p-0 border-0 rounded-circle text-nowrap text-dark disabled font-weight-bold"><?=$prevMonthDay?></span>
                         </div>
                     </a>
                     <? endfor; $week=$dayday+1; else: $week++; endif; ?>
 
-                  <div id="" role="button" data-date="{{$keyDate}}" aria-label="воскресенье, 7 мая 2023 г."
-                      class="col p-0 addSaveDate <?=(isset($leadsData[$keyDate])) ? 'bg-warning' : ''?>">
-                          <span class="btn p-0 border-0 rounded-circle text-nowrap btn-outline-light text-dark font-weight-bold"><?=$day?></span>
+                  <div id="" role="button" data-date="{{$keyDate}}" aria-label=""
+                      class="col p-0 addSaveDate">
+                          <span class="btn p-0 border-0 rounded-circle text-nowrap  text-dark font-weight-bold"><?=$day?></span>
                   </div>
 
                         <? if($day==$countDays && $week<=6):
                         $asda=$week; ?>
                         <? for($nextMonthDay=1; $nextMonthDay<=(7-$asda); $nextMonthDay++): ?>
                             <div class="col p-0">
-                                 <span class="btn p-0 border-0 rounded-circle text-nowrap btn-outline-light text-dark disabled font-weight-bold"><?=$nextMonthDay?></span>
+                                 <span class="btn p-0 border-0 rounded-circle text-nowrap text-dark disabled font-weight-bold"><?=$nextMonthDay?></span>
                             </div>
                         <? $week++; endfor; ?>
                     <? endif;?>

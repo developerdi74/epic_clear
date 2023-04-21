@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('time')->nullable();
             $table->string('message')->nullable();
             $table->integer('price')->nullable();
-            $table->string('process')->nullable()->default('Нет');
+            $table->string('process')->nullable()->default('new');
             $table->timestamps();
 
             $table->softDeletes();

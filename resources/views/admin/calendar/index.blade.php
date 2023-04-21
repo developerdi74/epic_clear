@@ -16,9 +16,9 @@
         $nmWeek = array("ВС","ПН","ВТ","СР","ЧТ","ПТ","СБ");
             $dayNow = date('d', time());
             $countDays = cal_days_in_month(CAL_GREGORIAN, date('m', time()), date('y', time()));
-            $monthNow = date('w', time());
+            $monthNow = date('m', time());
             $yearNow = date('y', time());
-			$dayday = date('w', );
+			$dayday = date('d', time());
     @endphp
 
     <div class="row">

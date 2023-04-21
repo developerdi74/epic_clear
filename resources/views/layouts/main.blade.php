@@ -197,6 +197,7 @@
     </div>
 </section>
 <script src="{{asset('public/js/jquery.min.js')}}"></script>
+<script src="{{asset('public/js/jquery.inputmask.min.js')}}"></script>
 <script src="{{asset('public/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('public/js/navbar-dropdown.js')}}"></script>
 <script src="{{asset('public/js/jquery.touch-swipe.min.js')}}"></script>

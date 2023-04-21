@@ -83,6 +83,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Lead'], function(){
     Route::get('/leads/{lead}/edit', EditController::class)->name('lead.edit');
     Route::patch('/leads/{lead}', UpdateController::class)->name('lead.update');
     Route::delete('/leads/{lead}', DestroyController::class)->name('lead.delete');
+    Route::get('/lead/time', TimeLoadController::class)->name('time.load');
 });
 
 

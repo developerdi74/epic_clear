@@ -23,7 +23,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'phone' => 'required|numeric',
+            'phone' => 'required|string',
             'time' => '',
             'message' => '',
             'process' => '',

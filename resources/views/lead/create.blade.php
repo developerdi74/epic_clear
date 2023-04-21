@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <section class="form cid-rR7qEDwb4F" id="header3-1">
+    <section class="form cid-rR7qEDwb4F lead_create_page" id="header3-1">
         <div class="mbr-overlay"></div>
         <div class="container">
             <div class="row">
@@ -33,10 +33,11 @@
                             </div>
                             <div data-for="time" class="col-lg-8 col-sm-12 form-group">
                                 @include('lead.calendar')
-                                <input type="datetime-local" style="display: none" name="time" value="{{ old('time') }}" placeholder="" class="form-control display-7" id="form-date-input">
-                            </div>
-                            <div data-for="time" class="col-lg-4 col-sm-12 form-group">
-                                @include('lead.time')
+                                </div>
+                            <div data-for="time" class="time_block_select col-lg-4 col-sm-12 form-group d-none">
+                                <div class="selectTime"></div>
+                                <div class="selectDate col-6"></div>
+                                <input type="datetime-local" name="time" readonly value="{{ old('time') }}" placeholder="" class="form-control display-7 date_input d-none" id="form-date-input">
                             </div>
                             <div data-for="phone" class="col-lg-12 form-group">
                                 <span>Зоны работы</span>
