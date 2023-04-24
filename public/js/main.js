@@ -95,4 +95,5 @@ $(document).ready(function () {
     $("#Email-header3-1").inputmask({"mask": "+7(999)999-99-99"});
     $("#yourEmail-contacts1-9").inputmask({"mask": "+7(999)999-99-99"});
     $("input[name=phone]").inputmask({"mask": "+7(999)999-99-99"});
+    //$("#phone").inputmask({"mask": "+7(999)999-99-99"});
 });

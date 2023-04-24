@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-md-12 col-lg-5 m-auto">
                     <div class="title">
-                        <h2 class="mbr-section-title mbr-regular align-left mbr-fonts-style mbr-white display-2">Новый способ получить идеально гладкую кожу надолго</h2>
+                        <h2 class="mbr-section-title mbr-regular align-left mbr-fonts-style mbr-white display-2"><span style="color:#b539cf">Лазерная эпиляция</span> - новый способ получить идеально гладкую кожу надолго</h2>
                         <p class="mbr-section-subtitle align-left mbr-fonts-style mbr-white block-left display-7">Мы используем диодный лазер. Это последнее поколение оборудования для лазерной эпиляции, которое помогает убрать волосы на теле на 2−5 лет без дискомфорта и рисков для здоровья.
 
                             Забудьте о раздражении после бритья или походам в салон каждые две недели. Лазерная эпиляция подойдет для всех участков вашего тела. Руки, ноги, бикини, живот, спина, лицо — можно все! Наслаждайтесь безупречной гладкостью каждый день.</p>

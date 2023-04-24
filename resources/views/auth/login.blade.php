@@ -20,7 +20,7 @@
                             <label for="numeric" class="col-md-4 col-form-label text-md-end">Телефон</label>
 
                             <div class="col-md-6">
-                                <input id="numeric" type="numeric" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="phone" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
