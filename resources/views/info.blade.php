@@ -5,12 +5,15 @@
 @endsection
 
 @section('content')
-    <section class="form cid-rR7qEDwb4F" id="header3-1">
+    <section class="form cid-rR7qEDwb4F" id="header3-1"  style="background-image: url({{asset('public/images/vse-o-lazernoj-epilyacii.jpg')}})">
         <div class="mbr-overlay"></div>
         <div class="container">
             <div class="row">
                 <h1 class="mbr-section-title mbr-regular align-left mbr-fonts-style mbr-white display-2">Вся информация о лазерной эпиляции</h1>
             </div>
+            <a class = "link text-white display-4" href = '#preparation'>#Подготовка к процедуре</a>
+            <a class = "link text-white display-4" href="#contraindications">#Противопоказания</a>
+            <a class = "link text-white display-4" href="#skincare">#Уход за кожей</a>
         </div>
     </section>
 
@@ -21,7 +24,6 @@
                 <div class="col-md-12 col-lg-9 m-auto left-block">
                     <div class="media-content">
                         <h1 class="mbr-section-title align-left mbr-bold mbr-white mbr-fonts-style display-2">Какие способы удаления нежелательных волос существуют?</h1>
-
                         <div class="mbr-section-text mbr-white">
                             <p class="mbr-text align-left mbr-fonts-style mbr-white display-7">
                                 Среди самых популярных методик — шугаринг (сахарная эпиляция), восковая эпиляция, электро- и фотоэпиляция, лазерная эпиляция.
@@ -69,7 +71,7 @@
         <div class="container-fluid align-center">
             <div class="row justify-content-md-center">
                 <div class="col-md-12 col-lg-9 m-auto left-block">
-                    <div class="media-content">
+                    <div class="media-content align-left">
                         <h1 class="mbr-section-title align-left mbr-bold mbr-white mbr-fonts-style display-2">Преимущества использования диодного лазера</h1>
 
                         <div class="mbr-section-text mbr-white">
@@ -88,17 +90,20 @@
             <div class="row justify-content-md-center">
                 <div class="col-md-12 col-lg-9 m-auto left-block">
                     <div class="media-content">
-                        <h1 class="mbr-section-title align-left mbr-bold mbr-black mbr-fonts-style display-2">Что стоит знать перед эпиляцией диодным лазером и после неё?</h1>
-                        <div class="mbr-section-text mbr-black">
+                            <a name = 'preparation'></a>
+                            <h1 class="mbr-section-title align-left mbr-bold mbr-black mbr-fonts-style display-2">Подготовка к лазерной эпиляции</h1>
+                            <p class="mbr-text align-left mbr-fonts-style mbr-black display-7">Для эффективного и безопасного проведения рекомендуется соблюдать следующие правила:</p>
+                            <p class="mbr-text align-left mbr-fonts-style mbr-black display-7"><strong class="">В течение четырёх недель</strong> настоятельно не рекомендуется
+                                <strong class="">загорать </strong>под прямыми лучами солнца и пользоваться средствами для
+                                <strong class="">искусственного загара</strong>.</p>
+                            <p class="mbr-text align-left mbr-fonts-style mbr-black display-7"><strong class="">За несколько дней</strong> до процедуры
+                                <strong class="">необходимо сбрить волосы</strong> в зоне обработки лазером, чтобы исключить риск микро-ожогов.</p>
+                            <p class="mbr-text align-left mbr-fonts-style mbr-black display-7"><strong class="">За неделю</strong> до процедуры необходимо прекратить использование
+                                <strong class="">спиртосодержащих лосьонов, тоников и других косметологических средств</strong>.</p>
+                            <p class="mbr-text align-left mbr-fonts-style mbr-black display-7"><strong class="">В день процедуры</strong> (если область процедуры касается лицевой части головы)
+                                <strong class="">необходимо удалить с лица всю возможную косметику</strong>.</p>
                             <p class="mbr-text align-left mbr-fonts-style mbr-black display-7">
-                                За 3-4 дня перед походом к косметологу на участках, подлежащих эпиляции, нужно выровнять волосяной покров бритвой. Оптимальная длина волос – 1-2 мм, что не будет мешать эффективности воздействия лазерного луча.
-
-                                Нельзя делать эпиляцию сразу после интенсивного теплового воздействия, например, после посещения солярия или после солнечных ванн. В противном случае кожа получит двойную порцию тепла, что негативно отразится на дерме.
-
-                                После эпиляции, на протяжении 14-15 дней, загорать на солнце, посещать солярий, сауну или баню нельзя. В течение всего курса необходимо пользоваться средствами от загара.
-                            </p>
-                        </div>
-                    </div>
+                                <strong class="">Рекомендуется </strong>также проводить процедуру за/через неделю <strong class="">после </strong>менструации для повышения болевого порога.</p></div>
                 </div>
             </div>
         </div>
@@ -131,6 +136,7 @@
             <div class="row justify-content-md-center">
                 <div class="col-md-12 col-lg-9 m-auto left-block">
                     <div class="media-content">
+                        <a name = 'contraindications'></a>
                         <h1 class="mbr-section-title align-left mbr-bold mbr-black mbr-fonts-style display-2">Противопоказания</h1>
                         <div class="mbr-section-text mbr-black">
                             <p class="mbr-text align-left mbr-fonts-style mbr-black display-7">
@@ -161,4 +167,38 @@
         </div>
     </section>
 
+    <section class="header8 cid-black" id="content7-4">
+        <div class="container-fluid align-center">
+            <div class="row justify-content-md-center">
+                <div class="col-md-12 col-lg-9 m-auto left-block">
+                    <div class="media-content">
+                        <a name = 'skincare'></a>
+                       <h1 class="mbr-section-title align-left mbr-bold mbr-white mbr-fonts-style display-2">Как ухаживать за кожей после лазерной эпиляции</h1>
+                        <p class="mbr-text align-left mbr-fonts-style mbr-white display-7"><strong class="">Необходимо увлажнять кожу</strong>, таким образом, вы предотвратите раздражение, и волоски будут легче выпадать, лучшими помощниками станут крем
+                                <strong class="">Бепантен</strong> или
+                                <strong class="">Пантенол</strong>.
+                                <strong class="">Не протирайте</strong> обработанные места лосьонами, содержащими спирт, это сушит кожу и
+                                <strong class="">провоцирует раздражения</strong>.</p>
+                        <p class="mbr-text align-left mbr-fonts-style mbr-white display-7"><strong class="">Минимум </strong>одну неделю
+                                <strong class="">нельзя загорать </strong>на солнце и в солярии, а лучше две недели. При выходе на улицу пользуйтесь солнцезащитным кремом с высоким фактором защиты, от 35 SPF.</p>
+                        <p class="mbr-text align-left mbr-fonts-style mbr-white display-7">
+                                <strong class="">Воздержитесь от походов в бассейн</strong>, сауну и баню хотя бы пару дней. Также
+                                <strong class="">не принимайте горячую </strong>ванну, лучше теплый душ.</p>
+                        <p class="mbr-text align-left mbr-fonts-style mbr-white display-7">
+                                <strong class="">На протяжении курса не выдергивайте волоски</strong>, в этот период показано только бритье, так как лазер воздействует только на луковицу волоска в активном росте. Если вы будете
+                                <strong class="">делать </strong>какую-либо
+                            <strong class="">депиляцию </strong>в этот период, то только
+                                <strong class="">увеличите </strong>время
+                            <strong class="">лазерной эпиляции.</strong> </p>
+                        <p class="mbr-text align-left mbr-fonts-style mbr-white display-7">
+                                <strong class="">Помните</strong>, что
+                                <strong class="">строгое </strong>следование рекомендациям поможет вам избежать
+                                <strong class="">негативных последствий</strong>, сохранит
+                                <strong class="">красоту </strong>и облегчит приобретение
+                                <strong class="">гладкой кожи надолго</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection

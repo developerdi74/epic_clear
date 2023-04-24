@@ -98,10 +98,12 @@ input[type="datetime-local"]::-webkit-inner-spin-button, input[type="date"]::-we
 }
 .page_about{
     font-size: 24px;
+    height: 100%;
+    border-radius: 5px;
 }
 .page_about .info_text{
     font-size: 24px;
-    color: #b539cf;
+    color: #fff;
 }
 body .cid-white{
     background-color:#fff;
@@ -219,4 +221,10 @@ section .left-block{
 }
 input[type="datetime-local"]{
     line-height:56px;
+}
+.whiteArea{
+    padding: 3.8rem 2.8rem 4rem;
+    background-color: #ffffff;
+    border-radius: 5px;
+    z-index: 10;
 }

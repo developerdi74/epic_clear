@@ -9,6 +9,6 @@ class DestroyController extends Controller
 {
     public function __invoke(Lead $lead){
         $lead->delete();
-        return redirect()->route('admin.lead.index');
+        return redirect()->route('admin.calendar.index');
     }
 }

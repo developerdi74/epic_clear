@@ -111,23 +111,17 @@
                     <h1 class="mbr-section-title align-left mbr-bold mbr-white  mbr-fonts-style display-2">Остались вопросы?</h1>
                     <h3 class="mbr-section-subtitle mbr-bold align-left mbr-fonts-style display-7">Оставь онлайн заявку, мы перезвоним и проконсультируем</h3>
                     <div class="mbr-section-text mbr-black">
-                        <p class="mbr-text align-left mbr-fonts-style display-7">Lorem ipsum
-                            dolor sit amet, consectetur adipiscing elit. Nulla eget lectus eu ex ornare porta euismod a
-                            libero. Phasellus vehicula placerat enim at egestas. Aliquam suscipit felis in massa
-                            hendrerit tristique.</p>
+                        <p class="mbr-text align-left mbr-fonts-style display-7">Лазерная эпиляция, что это, как происходит, какие есть виды, что нужно перед процедурой, а также противопоказания, Вы можете узнать на <a href="{{route('info.index')}}">этой странице</a></p>
                     </div>
                     <div class="social-list">
-                        <a href="" target="_blank">
-                            <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                        <a href="https://vk.com/epicleanmgn" target="_blank">
+                            <span class="socicon-vkontakte socicon mbr-iconfont mbr-iconfont-social"></span>
                         </a>
-                        <a href="" target="_blank">
-                            <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
-                        </a>
-                        <a href="" target="_blank">
+                        <a href="https://instagram.com/epicleanmgn?igshid=ZDdkNTZiNTM=" target="_blank">
                             <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
                         </a>
-                        <a href="" target="_blank">
-                            <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                        <a href="https://t.me/Epicleanmgn" target="_blank">
+                            <span class="socicon-telegram socicon mbr-iconfont mbr-iconfont-social"></span>
                         </a>
                         <a href="" target="_blank">
 

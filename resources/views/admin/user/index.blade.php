@@ -18,7 +18,6 @@
 				if($d1>$d2){
 					$call = 1;
 				}
-				echo $datePrev;
             @endphp
             <div class="col-12 col-sm-6 col-md-3 d-flex align-items-stretch flex-column">
                     <div class="card bg-light d-flex flex-fill">
