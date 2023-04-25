@@ -39,7 +39,7 @@
             </div>
             <div aria-hidden="true" class="b-calendar-grid-weekdays row no-gutters border-bottom">
                 @foreach($nmWeek as $nameDay)
-                    <small title="воскресенье" aria-label="воскресенье" class="col text-truncate">{{$nameDay}}</small>
+                    <small title="{{$nameDay}}" class="col text-truncate">{{$nameDay}}</small>
                 @endforeach
             </div>
             <div class="b-calendar-grid-body">

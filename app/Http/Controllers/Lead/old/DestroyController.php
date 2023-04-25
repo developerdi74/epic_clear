@@ -1,11 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Lead;
+namespace App\Http\Controllers\Lead\old;
 
-use App\Http\Controllers\Controller;
-use App\Models\Area;
+use App\Http\Controllers\Lead\BaseController;
 use App\Models\Lead;
-
 class DestroyController extends BaseController
 {
     public function __invoke(Lead $lead){

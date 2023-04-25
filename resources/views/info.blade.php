@@ -8,6 +8,13 @@
     <section class="form cid-rR7qEDwb4F" id="header3-1"  style="background-image: url({{asset('public/images/vse-o-lazernoj-epilyacii.jpg')}})">
         <div class="mbr-overlay"></div>
         <div class="container">
+
+            @if(request()->get('success')==1)
+                <div class="form-row">
+                    <div data-form-alert class="alert alert-success col-12">Спасибо! Заявка принята, обязательно ознакомьтесь с информацией по <a class = "fw-bold" href = '#preparation'>подготовке к лазерной эпиляции!</a>. В ближайшее время мы Вам перезвоним для подтверждения даты приема.</div>
+                </div>
+            @endif
+
             <div class="row">
                 <h1 class="mbr-section-title mbr-regular align-left mbr-fonts-style mbr-white display-2">Вся информация о лазерной эпиляции</h1>
             </div>

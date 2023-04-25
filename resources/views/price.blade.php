@@ -13,7 +13,7 @@
             </div>
         <div class="whiteArea">
             <div class="row">
-                <div class="col-lg-3 text-dark text-bold font-italic text-sm-center display-5">
+                <div class="col-lg-3 text-dark text-bold font-italic display-5">
                     Зона
                 </div>
                 <div class="col-lg-3 text-dark text-bold font-italic display-5 text-sm-left ">

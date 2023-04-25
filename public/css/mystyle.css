@@ -228,3 +228,12 @@ input[type="datetime-local"]{
     border-radius: 5px;
     z-index: 10;
 }
+.disabled{
+    background-color: #fff !important;
+}
+.select_hidden .jq-selectbox__dropdown .disabled{
+    display: none; !important;
+}
+.certification img{
+    max-width: 100%;
+}

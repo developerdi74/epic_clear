@@ -3,29 +3,29 @@
 @endphp
 <!DOCTYPE html><html>
 <head>
-    <!-- Site made with Mobirise Website Builder v4.11.7, https://mobirise.com -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="generator" content="Mobirise v4.11.7, mobirise.com">
+    <meta name="generator" content="EPIClean Laravel">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>{{ $seo->title }} | EPIClean</title>
     <meta name="description" content="{{ $seo->description }}">
     <meta name="keywords" content="{{ $seo->keywords }}">
-    <link rel="stylesheet" href="{{asset('public/css/font-awesome.css')}}">
-    <link rel="stylesheet" href="{{asset('public/css/mobirise2.css')}}">
-    <link rel="stylesheet" href="{{asset('public/css/mobirise-icons.css')}}">
-    <link rel="stylesheet" href="{{asset('public/css/tether.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/css/bootstrap-grid.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/css/bootstrap-reboot.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/css/jquery.formstyler.theme.css')}}">
-    <link rel="stylesheet" href="{{asset('public/css/styles.css')}}">
     <!---
+    <link rel="stylesheet" href="{{asset('public/css/font-awesome.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/mobirise-icons.css')}}">
     <link rel="preload" as="style" href="asset('assets/mobirise/css/mbr-additional.css')">
     <link rel="stylesheet" href="{{asset('public/css/jquery.datetimepicker.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/recaptcha.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/jquery.formstyler.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/tether.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/jquery.formstyler.theme.css')}}">
     -->
+
+    <link rel="stylesheet" href="{{asset('public/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/bootstrap-grid.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/bootstrap-reboot.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/mobirise2.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/styles.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/mbr-additional.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('public/css/mystyle.css')}}">
     <!-- Yandex.Metrika counter -->
@@ -46,7 +46,6 @@
     <!-- /Yandex.Metrika counter -->
 </head>
 <body>
-
 <!-- header-->
 <section class="menu cid-rR7qDAC8K6" once="menu" id="menu1-0">
     <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
@@ -82,7 +81,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link link text-white display-4" href="{{ route('about.index') }}">
-                            Контакты</a>
+                            О нас</a>
                     </li>
                     @if(auth()->user()==null)
                         <li class="nav-item">

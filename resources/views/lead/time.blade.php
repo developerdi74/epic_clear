@@ -28,8 +28,8 @@
     <? for($hour = $startData; $hour<=$startData+12; $hour++): if($hour<10) $getHour ="0".$hour; else $getHour=$hour;?>
         <option
             @if(isset($leadsData))
-                {{ in_array("$getHour:00",$leadsData) ? 'disabled':'' }}
-          @endif
+                {{ in_array("$getHour:00",$leadsData) ? "disabled d-none":'' }}
+            @endif
         value="{{$hour}}" {{($getHour == '08') ? "selected" : '' }} >{{ $getHour }}:00</option>
     <? endfor;?>
 </select>

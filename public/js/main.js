@@ -16,8 +16,7 @@ $(window).on('load', function(){
         $(this).addClass('epic');
         $('.time_block_select').removeClass('d-none');
         daySelect = date;
-        $('.date_input').val(date+' 08:00');
-        console.log(date+' 08:00');
+        $('.date_input').val(date+' 00:00');
 
         $.ajax({
             url: '/lead/time',         /* Куда отправить запрос */
@@ -26,7 +25,6 @@ $(window).on('load', function(){
             data: {day: daySelect},     /* Данные передаваемые в массиве */
             success: function(data){
                 $('.selectTime').html(data);/* функция которая будет выполнена после успешного запроса.  */
-                console.log(data);
                 $('.select_hidden').styler(); /* В переменной data содержится ответ от index.php. */
             }
         });
@@ -97,6 +95,6 @@ $(document).ready(function () {
     //$("#phone").inputmask({"mask": "+7(999)999-99-99"});
 
     $('.mbr-form').submit(function(){
-        ym(93338247,'reachGoal','add_lead');
+        ym(93338247,'reachGoal','add_lead')
     })
 });

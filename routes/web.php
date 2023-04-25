@@ -76,13 +76,13 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin', '
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Lead'], function(){
-    Route::get('/leads', IndexController::class)->name('lead.index');
+    //Route::get('/leads', IndexController::class)->name('lead.index');
     Route::get('/leads/create', CreateController::class)->name('lead.create');
     Route::post('/leads', StoreController::class)->name('lead.store');
-    Route::get('/leads/{lead}', ShowController::class)->name('lead.show');
-    Route::get('/leads/{lead}/edit', EditController::class)->name('lead.edit');
-    Route::patch('/leads/{lead}', UpdateController::class)->name('lead.update');
-    Route::delete('/leads/{lead}', DestroyController::class)->name('lead.delete');
+   // Route::get('/leads/{lead}', ShowController::class)->name('lead.show');
+   // Route::get('/leads/{lead}/edit', EditController::class)->name('lead.edit');
+   // Route::patch('/leads/{lead}', UpdateController::class)->name('lead.update');
+    //Route::delete('/leads/{lead}', DestroyController::class)->name('lead.delete');
     Route::get('/lead/time', TimeLoadController::class)->name('time.load');
 });
 

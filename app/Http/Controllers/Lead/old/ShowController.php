@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Lead;
+namespace App\Http\Controllers\Lead\old;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Lead\BaseController;
 use App\Models\Area;
 use App\Models\Lead;
-
 class ShowController extends BaseController
 {
     public function __invoke(Lead $lead){

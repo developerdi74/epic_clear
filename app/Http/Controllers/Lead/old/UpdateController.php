@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Lead;
+namespace App\Http\Controllers\Lead\old;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Lead\BaseController;
 use App\Http\Requests\Lead\UpdateRequest;
 use App\Models\Lead;
 class UpdateController extends BaseController
