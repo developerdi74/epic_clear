@@ -1,5 +1,5 @@
 $(window).on('load', function(){
-    $(document).on('click','.btn-danger', function(){
+    $(document).on('click','form .btn-danger', function(){
         $rez = confirm("Точно удаляем?");
         if($rez == false){
             return false;
