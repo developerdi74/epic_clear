@@ -4,7 +4,7 @@
 @endsection
 
 @section('content')
-    <section class="form cid-rR7qEDwb4F" id="header3-1" style="background-image: url({{asset('public/images/izobrazhenienog.png')}})">
+    <section class="form cid-rR7qEDwb4F" id="header3-1" style="background-image: url({{asset('public/images/about.jpg')}})">
         <div class="mbr-overlay"></div>
         <div class="container">
             <div class="row p-4">
