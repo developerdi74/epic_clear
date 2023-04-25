@@ -49,6 +49,11 @@
                                 <a href="{{route('admin.user.show', $user->id)}}" class="btn btn-sm btn-primary">
                                     <i class="fas fa-user"></i> Карточка
                                 </a>
+                                <form action="{{route('admin.user.delete', $user->id)}}" method="post" class="d-inline-block">
+                                    @csrf
+                                    @method('delete')
+                                    <button  type="submit" class="btn btn-danger btn-sm w-100 fs-2" id="delete_btn">Удалить</button>
+                                </form>
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,10 @@
 $(window).on('load', function(){
+    $(document).on('click','.btn-danger', function(){
+        $rez = confirm("Точно удаляем?");
+        if($rez == false){
+            return false;
+        }
+    })
 
     $(document).on('click','.card-header', function(){
         activlead = $(this).parent().find('.lead_window');

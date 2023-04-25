@@ -60,7 +60,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin', '
         Route::get('/user', IndexController::class)->name('admin.user.index');
         Route::get('/user/{user}', ShowController::class)->name('admin.user.show');
         Route::patch('/user/{user}', UpdateController::class)->name('admin.user.update');
-        Route::delete('/user/{user}', [DestroyController::class, 'delete'])->name('admin.user.delete');
+        Route::delete('/user/{user}', DestroyController::class)->name('admin.user.delete');
     });
 
     Route::group(['namespace' => 'Promotion'], function(){
@@ -77,7 +77,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' =>'admin', '
 
 Route::group(['namespace' => 'App\Http\Controllers\Lead'], function(){
     //Route::get('/leads', IndexController::class)->name('lead.index');
-    Route::get('/leads/create', CreateController::class)->name('lead.create');
+    Route::get('/create', CreateController::class)->name('lead.create');
     Route::post('/leads', StoreController::class)->name('lead.store');
    // Route::get('/leads/{lead}', ShowController::class)->name('lead.show');
    // Route::get('/leads/{lead}/edit', EditController::class)->name('lead.edit');

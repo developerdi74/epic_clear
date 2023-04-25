@@ -37,6 +37,14 @@
                         <h3 class="card-title">Имя: <span class="font-weight-bold">{{$lead->name}} </span>  |
                             Дата: <span class="font-weight-bold">{{ date('Y-m-d H:i',strtotime($lead->time)) }}</span>  |
                             Телeфон: <span class="font-weight-bold"><a href="tel:{{$lead->phone}}">{{ $lead->phone }}</span></h3></a>
+
+                        <div class="text-right">
+                            <form action="{{route('admin.lead.delete', $lead->id)}}" method="post" class="d-inline-block">
+                                @csrf
+                                @method('delete')
+                                <button  type="submit" class="btn btn-sm btn-danger" id="delete_btn">DEL</button>
+                            </form>
+                        </div>
                     </div>
                     <!-- /.card-header -->
                     <div class="lead_window d-none">
@@ -128,13 +136,6 @@
                                     <button type="submit" class="btn btn-primary w-100">Изменить</button>
                             </div>
                         </form>
-                        <div class="card-footer text-right">
-                            <form action="{{route('admin.lead.delete', $lead->id)}}" method="post">
-                                @csrf
-                                @method('delete')
-                                <button  type="submit" class="btn btn-danger w-25" id="delete_btn">Удалить</button>
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>
