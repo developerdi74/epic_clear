@@ -20,7 +20,7 @@ class StoreController extends BaseController
         }
         $this->service->store($data);
         $telegram = new Telegram;
-        $telegram->sendTelegram($data, $areas);
+        $rez = $telegram->sendTelegram($data, $areas);
         $success = 1;
         return redirect()->route('info.index', compact('success'));
     }
