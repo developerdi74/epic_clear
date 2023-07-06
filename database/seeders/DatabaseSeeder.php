@@ -7,6 +7,7 @@ use App\Models\Area;
 use App\Models\Lead;
 use App\Models\Seo;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,7 +15,16 @@ class DatabaseSeeder extends Seeder
      * Seed the application's database.
      */
     public function run(): void
-    {
+    {   
+        \App\Models\User::factory()->create([
+            'name' => 'admin',
+            'email' => 'admin@admin.ru',
+            'email_verified_at' => now(),
+            'role' => 'admin',
+            'password' => bcrypt('admin'), // password
+            'remember_token' => Str::random(10),
+        ]);
+
         $leads = Lead::factory(20)->create();
         $areas = Area::factory(8)->create();
         foreach($leads as $lead){
