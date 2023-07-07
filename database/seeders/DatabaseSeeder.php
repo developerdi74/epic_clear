@@ -15,6 +15,17 @@ class DatabaseSeeder extends Seeder
      * Seed the application's database.
      */
     public function run(): void
+<<<<<<< HEAD
+    {
+         \App\Models\User::factory()->create([
+             'name' => 'admin',
+             'email' => "admin",
+             'email_verified_at' => now(),
+             'role' => "admin",
+             'password' => bcrypt('admin'), // password
+             'remember_token' => Str::random(10),
+         ]);
+=======
     {   
         \App\Models\User::factory()->create([
             'name' => 'admin',
@@ -24,6 +35,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('admin'), // password
             'remember_token' => Str::random(10),
         ]);
+>>>>>>> 8da36e9c124c4ae64cd3d404adfddfcd9238c0d1
 
         $leads = Lead::factory(20)->create();
         $areas = Area::factory(8)->create();

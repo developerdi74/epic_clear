@@ -1,5 +1,9 @@
 $(window).on('load', function(){
+<<<<<<< HEAD
+    $(document).on('click','.card form .btn-danger', function(){
+=======
     $(document).on('click','.sidebar-mini form .btn-danger', function(){
+>>>>>>> 8da36e9c124c4ae64cd3d404adfddfcd9238c0d1
         $rez = confirm("Точно удаляем?");
         if($rez == false){
             return false;
