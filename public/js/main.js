@@ -101,6 +101,6 @@ $(document).ready(function () {
     //$("#phone").inputmask({"mask": "+7(999)999-99-99"});
 
     $('.mbr-form').submit(function(){
-        ym(93338247,'reachGoal','add_lead')
+        ym(94233082,'reachGoal','sendForm')
     })
 });
