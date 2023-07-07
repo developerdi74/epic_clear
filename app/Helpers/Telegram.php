@@ -19,13 +19,14 @@ class Telegram{
         \nДата: <b>$data[time]</b>
         \nСообщение: <b>$data[message]</b>
         \nСсылка на Лид: ".route('admin.lead.index',['process'=>'new']);
-        $chatID="-833812569";
+        //$chatID="-833812569";
+        $chatID="-1001902571191";
         $myId = '1843117905';
         $botToken = "6087052425:AAEp5ywYJE0n33in0N3IrO7CXkKr4DIjiL0";
         $uriApi = 'https://api.telegram.org/bot';
         $method = '/sendMessage';
         $uri = $uriApi.$botToken.$method;
-        Http::post($uri,[
+        $rez = Http::post($uri,[
             'chat_id' => $chatID,
             'text' => $message,
             'parse_mode' => 'html'
